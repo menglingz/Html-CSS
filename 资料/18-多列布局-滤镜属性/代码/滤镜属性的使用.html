@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 900px;
+        /* 滤镜属性：filter */
+        /* filter: url(./封面.jpg); */
+        /* 模糊度：设定高斯模糊值，屏幕上的像素多少个融合在一起 */
+        filter: blur(2px);
+        /* 灰度 
+                100%图像全灰
+                0无变化
+
+            */
+        filter: grayscale(100%);
+        /* 不透明度 */
+        filter: opacity(70%);
+        /* 亮度 
+                0图像全黑
+                100%原始亮度
+                >100%更亮
+            */
+        filter: brightness(100%);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./封面.jpg" alt="" />
+  </body>
+</html>

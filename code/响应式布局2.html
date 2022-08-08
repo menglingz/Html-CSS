@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .top > div {
+      width: 49%;
+    }
+
+    .top img {
+      width: 100%;
+    }
+
+    .top .right {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top .right div {
+      width: 49%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top > div {
+        width: 100%;
+      }
+    }
+    .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .bottom > div {
+      width: 25%;
+      padding: 5px;
+      box-sizing: border-box;
+      border: 1px solid grey;
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px black;
+    }
+    .bottom img {
+      width: 100%;
+    }
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+      .bottom > div {
+        width: 31%;
+      }
+    }
+    @media screen and (max-width: 768px) and (min-width: 450px) {
+      .bottom > div {
+        width: 48%;
+      }
+    }
+    @media screen and (max-width: 450px) {
+      .bottom > div {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- 
+     top：flex, wrap,
+         >768px  左 49%  右49%  
+         <768px  上 100% 下100%
+
+     bottom:flex, wrap
+         >1024     23%*4
+         768> <1024  31%*3
+
+         450> <768   48%*2
+         <450  90%*1
+     -->
+    <div class="top">
+      <div class="left">
+        <img src="../img/swiper1.jpeg" alt="" />
+      </div>
+      <div class="right">
+        <div>
+          <img src="../img/ad1.png" alt="" />
+        </div>
+        <div>
+          <img src="../img/ad2.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+      <div>
+        <img src="../img/img1.jpg" alt="" />
+        <p>迷你微型摄影展</p>
+      </div>
+    </div>
+  </body>
+</html>

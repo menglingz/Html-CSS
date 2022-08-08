@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- action：提交表单的地址
+         name：设置表单的表名
+         method：设置提交的方式，默认get，设置post是不通过地址栏的提交
+    -->
+    <form action="" name="" method="">
+        <!-- 表单项需要设置name才能实现提交动作 -->
+        <!-- 单行文本输入框 -->
+        <input type="text" name="name2">
+        <!-- 密码输入框 -->
+        <input type="password" name="" id="">
+        <!-- 空白功能的按钮 -->
+        <input type="button" value="按钮">
+
+        <!-- 取色器 -->
+        <input type="color" name="" id="">
+        <!-- 提交文件 -->
+        <input type="file" name="" id="">
+        <!-- 提交日期时间 -->
+        <input type="datetime-local" name="" id="">
+        <!-- 复选框 -->
+        <input type="checkbox" name="song" id="" value="xzq">xzq
+        <input type="checkbox" name="song" id="" value="cyx">cyx
+        <input type="checkbox" name="song" id="" value="xs">xs
+        <br>
+        <!-- 单选框 -->
+        <input type="radio" name="class1" id="" value="t">tyw
+        <input type="radio" name="class1" id="" value="l">lzl
+        <input type="radio" name="class1" id="" value="cgx">cgx
+        <input type="radio" name="class1" id="" value="css">css
+        <!-- 下拉列表 -->
+        <select name="aa" id="">
+            <optgroup label="组1">
+                <option value="text1">缴纳1</option>
+                <option value="text2">缴纳1</option>
+            </optgroup>
+            <optgroup label="组2">
+                <option value="text3">缴纳2</option>
+                <option value="text4">缴纳2</option>
+            </optgroup>
+        </select>
+        <!-- 以上三个提供选项的表单项，需要给每一个设置value值才能进行有意义的提交 -->
+        <!-- 提交按钮 -->
+        <input type="submit" value="提交">
+        <!-- 重置按钮 -->
+        <input type="reset" value="重置">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 400px;
+            /* 设置多列布局column */
+            /* 设置多少列 */
+            column-count: 3;
+            /* 设置列间距 */
+            column-gap: 40px;
+            /* 设置列之间的分割线 */
+            column-rule: 2px solid red;
+            /* 设置列宽,与列数属性冲突，一般不会同时设置 */
+            column-width: 100px;
+            /* 设置列之间的高度，默认列等高，
+            当容器有高度时，设置auto，会先将前面的列填满再换列
+            */
+            column-fill: auto;
+        }
+        h1{
+            /* 给内容设置的属性：设置内容是否横跨整个宽度
+                只有两个取值，all横款全部列，none不横跨
+                当高度与设定的列数放不下时，会自动增加列
+            */
+            column-span: all;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>科学家首次证实人类中耳由鱼鳃演变而来</h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo placeat, molestiae impedit provident reiciendis illum aspernatur! Dolor unde voluptatum nihil vel a consequatur error architecto aspernatur distinctio, necessitatibus ad aperiam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum id quam laborum itaque voluptate pariatur alias, recusandae veritatis, nam eius enim, ad explicabo iusto veniam quod quo sunt ea accusamus.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt necessitatibus facere veniam nulla, recusandae tempore voluptas labore consectetur. Natus facilis obcaecati labore earum quae quos rerum pariatur harum accusantium quasi!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias perspiciatis similique ad facere adipisci eum corporis esse eius, quia fuga, numquam ipsam impedit blanditiis laboriosam animi vel. Dolores, quo doloremque.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores ipsam soluta est deserunt deleniti mollitia fugit perferendis quasi modi. Temporibus hic amet ab laboriosam! Ipsa adipisci quasi quas amet consectetur?
+    </div>
+</body>
+</html>

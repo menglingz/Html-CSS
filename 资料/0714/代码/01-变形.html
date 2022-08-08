@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 2px solid;
+            margin: 0 auto;
+        }
+        .box .a1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* margin: 40px 50px; */
+            /* 变形-旋转 */
+            /* transform:rotate(45deg); */
+            /* 变形-平移 */
+            /* transform: translate(100px,200px); */
+            /* transform:rotate(45deg) translateX(200px) translateY(200px) ; */
+            /* 缩放 */
+            /* transform: scaleX(1.5) scaleY(0.5); */
+
+            /* 倾斜 */
+            transform: skew(30deg);
+            transform: skew(30deg,30deg);
+            transform: skewY(30deg) skewX(30deg);
+            
+        }
+        .a2{
+            width: 200px;height: 200px;background-color: yellowgreen;
+            transform: rotate(60deg);
+            transform-origin: -50px;
+        }
+        .a3{
+            font-size: 12px;
+            transform: scale(0.1);
+            transition: all 1s;
+        }
+        .box:hover .a3{
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+    <body>
+        <div class="box">
+            <!--  -->
+            <div class="a1">111</div>
+            <div class="a2"></div>
+            <div class="a3">你好</div>
+        </div>
+    </body>
+</html>

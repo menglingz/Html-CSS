@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ol,
+      li {
+        list-style: none;
+      }
+      #banner {
+        width: 1000px;
+        height: 500px;
+        margin: 100px auto;
+        position: relative;
+      }
+      #links {
+        position: absolute;
+        right: 5px;
+        z-index: 999;
+        width: 120px;
+        height: 50px;
+      }
+      #links a {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: grey;
+        line-height: 24px;
+        border-radius: 50%;
+        float: left;
+        margin: 5px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      #banner img {
+        display: none;
+        width: 1000px;
+        position: absolute;
+      }
+      #banner img:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <img id="img1 " src="../资料/07-练习/img/mi01.jpg" style="display: block" />
+      <img id="img2" src="../资料/07-练习/img/mi02.jpg" />
+      <img id="img3" src="../资料/07-练习/img/mi03.jpg" />
+
+      <ol id="links">
+        <li><a href="#img1" style="background-color: orange">1</a></li>
+        <li><a href="#img2">2</a></li>
+        <li><a href="#img3">3</a></li>
+      </ol>
+    </div>
+    <script>
+      var as = document.querySelectorAll('a')
+      for (var i = 0; i < as.length; i++) {
+        as[i].onclick = function () {
+          for (var j = 0; j < as.length; j++) {
+            as[j].style.backgroundColor = 'grey'
+          }
+          this.style.backgroundColor = 'orange'
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BFC实现简单的2栏布局</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body > div {
+        height: 100px;
+        width: 100px;
+      }
+      .box1 {
+        margin-bottom: 100px;
+      }
+      .box2 {
+      }
+      .box3 {
+        overflow: hidden;
+        margin-top: 100px;
+      }
+      /* .box1 {
+        float: left;
+        width: 100px;
+      }
+      .box2 {
+        overflow: hidden;
+        background-color: lightsteelblue;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box1">
+      <p>一切皆因BFC而起</p>
+    </div>
+    <div class="box3">
+      <div class="box2">
+        <p>我是通过自适应占满整个视窗</p>
+      </div>
+    </div> -->
+    <input type="text" list="a" />
+    <datalist id="a">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </datalist>
+  </body>
+</html>

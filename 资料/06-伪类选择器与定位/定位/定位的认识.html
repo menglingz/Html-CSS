@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            width: 300px;
+            height: 500px;
+            padding: 20px;
+            border: 1px solid red;
+            /* 子绝父相 */
+            position: relative;
+        }
+        img{
+            width: 300px;
+            /* 定位：position */
+            /* 固定定位：取值fixed，相对于浏览器窗口的位置，不占有文档流的位置 */
+            /* position: fixed; */
+            /* 相对定位： relative,相对于自身原本的位置进行移动，原本的文档流位置保留*/
+            /* position: relative; */
+            /* 绝对定位：absolute，相对于有定位设置的父级元素，（一层一层查找）如果都无设置，那么就去参考浏览器窗口 */
+            position: absolute;
+            bottom: 50px;
+            /* top: 50px; */
+            /* right: 900px; */
+        }
+
+    </style>
+</head>
+<body>
+    <p>
+        <img src="./表格练习.png" alt="">
+        位于西藏自治区藏北高原中部的当惹雍措，深度超过210米，是目前已知的西藏最深的湖泊。矗立湖南岸的达果雪山，亦是一处令人神往的壮美自然景观。
+
+2021年夏天，四川大学中国藏学研究所教授李永宪任专家的纳木错环湖科考队，在当惹雍措东南侧发现了一处规模巨大、气势磅礴的石柱阵列，他们将其命名为“苏布石阵遗迹”。
+
+日前在西藏自治区考古成果的公众分享会上，有关这处巨大石阵的消息一经亮相，便引起网友们的强烈的兴趣——是谁布置了这片神秘石阵？用它来做什么？
+
+今天（5月5日），红星新闻记者联系到李永宪教授，他详细解读了这处神秘的遗迹，推测其年代应在距今2000年前后，应该是举行祭祀礼仪之地。
+    </p>
+</body>
+</html>

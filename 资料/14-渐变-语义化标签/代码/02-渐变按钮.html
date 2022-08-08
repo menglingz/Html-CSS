@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html,body,a{
+            padding: 0;margin: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            background-color: black;
+        }
+        a{
+            display: block;
+            width: 120px;height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 20px;
+            /* background: blue; */
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            /* 去除超链接标签的下划线 */
+            text-decoration: none;
+            position: relative;
+            background-size: 400%;
+            background-image: linear-gradient(-90deg, #13547a 0%, #80d0c7 100%);
+
+        }
+
+        a:hover{
+            animation: aa 4s linear infinite;
+        }
+/* 
+        a::before{
+            content: "";
+            position: absolute;
+            top: -5px;bottom: -5px;left: -5px;right: -5px;
+            
+            z-index: -1;
+            background-size: 200%;
+            border-radius: 20px;
+
+        } */
+
+        @keyframes aa{
+            0%{
+                background-position: 0 0;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <a href="" class="button">登录</a>
+</body>
+</html>

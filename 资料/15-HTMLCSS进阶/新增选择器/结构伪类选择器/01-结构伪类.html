@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;height: 100px;
+            margin: 0 auto;
+            background: yellow;
+        }
+        span{
+            float: left;
+            width: 150px;
+            height: 100px;
+            background: rgb(0, 0, 0);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .box div{
+            float: left;
+            width: 150px;
+            height: 100px;
+            background: red;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .box div:last-child{
+            background: green;
+        }
+        .box div:first-child{
+            background-color: pink;
+        }
+        .box div:nth-child(4){
+            background-color: aqua;
+        }
+        /* An+b ,其中n是从0开始的整数*/
+        .box div:nth-child(3n+2){
+            /* 第二个，第五个，，， */
+            /* background-color: blueviolet; */
+            /* 其他的元素也会占位置 */
+        }
+        .box div:nth-of-type(3n+2){
+            background-color: darkviolet;
+            /* 其他的元素不会占位置 */
+        }
+    </style>
+</head>
+<body>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <span></span>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</body>
+</html>

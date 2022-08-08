@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      @keyframes run {
+        0% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .box {
+        width: 402px;
+        margin: 0 auto;
+        border: 1px solid black;
+      }
+
+      .box ul {
+        width: 100%;
+        animation: run 0.001s infinite;
+      }
+
+      .box ul::after {
+        content: '';
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+      }
+
+      .box > ul > li {
+        width: 50%;
+        height: 200px;
+        float: left;
+      }
+
+      .box > ul > li:nth-child(1) {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: transparent transparent red transparent;
+      }
+
+      .box > ul > li:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: transparent transparent transparent blue;
+      }
+
+      .box > ul > li:nth-child(4) {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: yellow transparent transparent transparent;
+      }
+
+      .box > ul > li:nth-child(3) {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: transparent green transparent transparent;
+      }
+
+      .box > ul > li:nth-child(5) {
+        box-sizing: border-box;
+        border-right: 5px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <!-- <li></li> -->
+      </ul>
+    </div>
+  </body>
+</html>

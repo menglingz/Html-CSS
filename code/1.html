@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .switch-bar {
+      width: 100%;
+      height: 500px;
+
+      overflow: hidden;
+    }
+
+    .switch-bar .lunbo {
+      width: 10000px;
+      height: 100%;
+      position: relative;
+      animation: run1 13s infinite linear;
+    }
+
+    .lunbo:hover {
+      animation: none;
+    }
+
+    .switch-bar .lunbo li {
+      width: 100vw;
+      height: 100%;
+      float: left;
+
+    }
+
+    .switch-bar img {
+      width: 100vw;
+      height: 500px;
+
+    }
+
+    @keyframes run1 {
+      0% {
+        transform: translateX(0px);
+      }
+
+      12.5% {
+        transform: translateX(-100vw);
+      }
+
+      25% {
+        transform: translateX(-100vw);
+      }
+
+      37.5% {
+        transform: translateX(-200vw);
+      }
+
+      50% {
+        transform: translateX(-200vw);
+      }
+
+      62.5% {
+        transform: translateX(-300vw);
+      }
+
+      75% {
+        transform: translateX(-300vw);
+      }
+
+      87.5% {
+        transform: translateX(-400vw);
+      }
+
+      100% {
+        transform: translateX(-400vw);
+      }
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    .lunbo-circle {
+      box-sizing: border-box;
+      width: 70px;
+      height: 15px;
+      position: absolute;
+      left: 48vw;
+      top: 480px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 999;
+    }
+
+    .lunbo-circle li {
+      width: 15px;
+      height: 15px;
+
+    }
+
+    .lunbo-circle li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: red;
+    }
+
+    /* .switch-bar .lunbo li img:target {
+      
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="switch-bar">
+    <ul class="lunbo">
+      <li><img src="../资料/18-多列布局-滤镜属性/作业/端午作业/工大页面素材图/工大轮播图1.jpg" id="img1" /></li>
+      <li><img src="../资料/18-多列布局-滤镜属性/作业/端午作业/工大页面素材图/工大轮播图2.jpg" id="img2" /></li>
+      <li><img src="../资料/18-多列布局-滤镜属性/作业/端午作业/工大页面素材图/工大轮播图3.jpg" id="img3" /></li>
+      <li><img src="../资料/18-多列布局-滤镜属性/作业/端午作业/工大页面素材图/工大轮播图4.jpg" id="img4" /></li>
+      <li><img src="../资料/18-多列布局-滤镜属性/作业/端午作业/工大页面素材图/工大轮播图1.jpg" alt="" /></li>
+    </ul>
+    <ul class="lunbo-circle" tabindex="1">
+      <li><a href="#img1"></a></li>
+      <li><a href="#img2"></a></li>
+      <li><a href="#img3"></a></li>
+      <li><a href="#img4"></a></li>
+    </ul>
+  </div>
+
+
+</body>
+
+</html>

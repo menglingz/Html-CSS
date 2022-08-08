@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        background-color: #9cbc2c;
+        width: 400px;
+        height: 800px;
+        margin: 10px auto;
+      }
+      .box div {
+        background-color: #b9d06a;
+        border: 1px solid white;
+        width: 330px;
+        height: 46px;
+        font-size: 17px;
+        color: black;
+        margin: 2px 30px;
+        border-radius: 5px;
+        padding-left: 10px;
+      }
+      .box p {
+        width: 340px;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        color: black;
+        font-size: 20px;
+        margin: 0 30px;
+      }
+      .box span {
+        display: block;
+        width: 90px;
+        float: left;
+        height: 46px;
+        line-height: 46px;
+        font-size: 12px;
+      }
+      .box input {
+        margin: 10px 0;
+        margin-left: 20px;
+        border-radius: 5px;
+        border: 1px solid white;
+        height: 26px;
+        width: 200px;
+        float: left;
+        padding-left: 5px;
+      }
+      .box div:nth-child(6) {
+        height: 100px;
+      }
+      .box textarea {
+        margin: 11px 0;
+        margin-left: 20px;
+        width: 203px;
+        border: 1px solid white;
+        border-radius: 5px;
+      }
+      .box div:nth-child(10) {
+        height: 80px;
+      }
+      .box div:nth-child(10) span {
+        height: 30px;
+        line-height: 30px;
+        float: none;
+        font-size: 13px;
+      }
+      .box div:nth-child(10) input {
+        width: 15px;
+        height: 20px;
+        float: none;
+        margin-left: 20px;
+      }
+      .box select {
+        width: 206px;
+        height: 26px;
+        margin: 10px 0;
+        margin-left: 20px;
+        border-radius: 5px;
+        border: 1px solid white;
+      }
+      button {
+        width: 100px;
+        height: 30px;
+        margin: 10px 140px;
+        background-color: #384313;
+        border-radius: 13px;
+        font-size: 18px;
+        line-height: 30px;
+        color: white;
+      }
+</style>
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <form action="">
+        <p>Step 1:Your detail</p>
+        <div>
+          <span>Name</span>
+          <input type="text" placeholder="First and last name" name="name" required/>
+        </div>
+        <div>
+          <span>Email</span>
+          <input type="email" placeholder="example@domain.com" name="email" pattern="[a-zA-Z0-9]{1-7}@[a-zA-Z0-9]+(\.[a-zA-Z0-9_-]+)+" required/>
+        </div>
+        <div>
+          <span>Phone</span>
+          <input type="tel" placeholder="Eg.+447500000000" name="phone" pattern="[0-9]{4}0{8}" required/>
+        </div>
+        <p>Step 2:Delivery address</p>
+        <div>
+          <span>Address</span>
+          <textarea cols="20" rows="5" name="address" required></textarea>
+        </div>
+        <div>
+          <span>Post code</span>
+          <input type="text" name="code" required/>
+        </div>
+        <div>
+          <span>Country</span>
+          <input type="text" name="country" required/>
+        </div>
+        <p>Step 3:Card details</p>
+        <div>
+          <span>Card type</span>
+          <input type="radio" name="cardtype" />VISA <input type="radio" name="cardtype" />AmEx <input type="radio" name="cardtype" />Mastercard
+        </div>
+        <div>
+          <span>Card number</span>
+          <input type="number" required autofocus/>
+          <!-- <select name="" id="" multiple>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select> -->
+        </div>
+        <div>
+          <span>Security code</span>
+          <input type="number" required/>
+          <!-- <select name="" id="" multiple>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select> -->
+        </div>
+        <div>
+          <span>Name on card</span>
+          <input type="number" placeholder="Exact name as on the card" name="namecard" required/>
+        </div>
+        <button>BUY IT!</button>
+      </form>
+    </div>
+  </body>
+</html>

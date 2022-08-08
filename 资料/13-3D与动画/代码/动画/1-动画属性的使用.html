@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: rgba(0, 34, 255, 0.514);
+            width: 100px;height: 100px;
+            /* 动画的使用：
+                第一步：定义动画规则
+                第二步：引用动画规则
+            
+            */
+            animation: run 5s infinite linear;
+
+        }
+        /* 
+                第一步：定义动画规则
+         */
+        @keyframes run{
+            0%{
+                width: 100px;
+            }
+            20%{
+                width: 200px;
+            }
+            70%{
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

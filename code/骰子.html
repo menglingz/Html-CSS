@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 700px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 100px auto;
+        align-items: center;
+      }
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box1 div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .box2 div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .box3 div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .box3 div:nth-child(1) {
+        align-self: flex-end;
+      }
+      .box3 div:nth-child(2) {
+        align-self: center;
+      }
+      .box3 div:nth-child(3) {
+        align-self: flex-start;
+      }
+      .box4 {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box4 .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-basis: 100%;
+      }
+      .box4 .row div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .box5 {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box5 .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-basis: 100%;
+      }
+      .box5 .row div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .box5 .row:nth-child(2) {
+        justify-content: center;
+      }
+      .box6 {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box6 .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-basis: 100%;
+      }
+      .box6 .row div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">
+        <div></div>
+      </div>
+      <div class="box2">
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box3">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box4">
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="box5">
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="row">
+          <div></div>
+        </div>
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="box6">
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="row">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

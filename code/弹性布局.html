@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .box {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+      }
+      header,
+      footer {
+        height: 150px;
+      }
+      footer {
+        background-color: red;
+      }
+      main {
+        flex: 1;
+        display: flex;
+      }
+      header {
+        display: flex;
+      }
+      .header-left {
+        background-color: antiquewhite;
+        width: 250px;
+        height: 100%;
+      }
+      .header-right {
+        flex: 1;
+        background-color: aquamarine;
+      }
+      .main-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .main-mid {
+        flex: 1;
+        background-color: darkgreen;
+      }
+      .main-right {
+        flex: 1;
+        background-color: gray;
+      }
+      .main-l-top {
+        flex: 1;
+        background-color: crimson;
+      }
+      .main-l-mid {
+        height: 120px;
+        background-color: blue;
+      }
+      .main-l-bottom {
+        height: 120px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <header>
+        <div class="header-left"></div>
+        <div class="header-right"></div>
+      </header>
+      <main>
+        <div class="main-left">
+          <div class="main-l-top"></div>
+          <div class="main-l-mid"></div>
+          <div class="main-l-bottom"></div>
+        </div>
+        <div class="main-mid"></div>
+        <div class="main-right"></div>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>

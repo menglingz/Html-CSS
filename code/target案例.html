@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+        width: 500px;
+        border: 1px solid red;
+        margin: 30px auto;
+        font-size: 12px;
+        color: black;
+      }
+      .section {
+        border-bottom: 1px solid grey;
+      }
+      .menu h2 {
+        margin: 5px 0;
+        position: relative;
+      }
+      .menu h2::before {
+        content: '';
+        width: 0px;
+        height: 0px;
+        border: 10px solid;
+        border-color: black transparent transparent transparent;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      .menu h2 a {
+        background-color: #8f8f8f;
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px 10px;
+        text-shadow: 2px 2px 2px #b5b5b5;
+      }
+      .menu p {
+        height: 0px;
+        overflow: hidden;
+        font-size: 16px;
+      }
+      .menu h2 a:hover {
+        background-color: blue;
+        color: white;
+      }
+      .menu .section:target h2 a {
+        background-color: blue;
+        color: white;
+      }
+      .menu .section:target p {
+        height: 100px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="section" id="a1">
+        <h2><a href="#a1">第一</a></h2>
+        <p>第一块区域</p>
+      </div>
+      <div class="section" id="a2">
+        <h2><a href="#a2">第二</a></h2>
+        <p>第二块区域</p>
+      </div>
+      <div class="section" id="a3">
+        <h2><a href="#a3">第三</a></h2>
+        <p>第三块区域</p>
+      </div>
+    </div>
+  </body>
+</html>

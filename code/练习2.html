@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      body {
+        height: 4000px;
+      }
+      .box1 {
+        width: 100%;
+        height: 50px;
+        background-color: red;
+      }
+      .box2 {
+        width: 100%;
+        height: 70px;
+        background-color: brown;
+      }
+      .box3 {
+        width: 100%;
+        height: 50px;
+        background-color: crimson;
+        position: sticky;
+        top: 0;
+      }
+      .box3 ul {
+        text-align: center;
+      }
+      .box3 ul li {
+        float: left;
+        width: 10%;
+        text-align: center;
+        line-height: 50px;
+        font-size: 16px;
+        border-right: 1px solid black;
+        color: #fff;
+      }
+      .first {
+        margin-left: 210px;
+        border-left: 1px solid black;
+      }
+      .box3 ul li:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+      <div class="container">
+        <ul>
+          <li class="first">账户服务</li>
+          <li>存款与贷款</li>
+          <li>信用卡</li>
+          <li>外汇业务</li>
+          <li>投资理财</li>
+          <li>私人银行</li>
+          <li>金融市场</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

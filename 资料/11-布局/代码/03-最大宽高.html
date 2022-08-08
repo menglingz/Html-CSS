@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        div{
+            background-color: burlywood;
+            height: 50%;
+            max-height: 300px;
+            width: 50%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 宽高自适应
+        宽度和高度去适应浏览器窗口的宽高
+        最大最小宽高并不算严格意义上的宽高自适应
+        宽度100%不叫自适应，而宽度不设置，或者设置取值auto才是自适应
+        
+    -->
+    <!-- 使用最大最小宽高时（自适应窗口高度）
+        关键代码：
+        html,body{
+            height: 100%;
+            /* 最关键的一句，在后面的移动端中我们会非常重要的用到窗口高度 */
+        }
+        
+    -->
+    <div></div>
+</body>
+</html>

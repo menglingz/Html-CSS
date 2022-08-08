@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!-- 单行文本输入框 -->
+        <input type="text"><br>
+        <!-- input中的type取值有新增 -->
+        <!-- 颜色控件 -->
+        <input type="color"><br>
+        <!-- 输入日期的控件 -->
+        <input type="date"><br>
+        <!-- 输入日期与时间的控件 -->
+        <input type="datetime-local"><br>
+        <!-- 输入年月的控件 -->
+        <input type="month">
+        <!-- 进度条控件 -->
+        <input type="range">
+        <!-- 搜索字符串的单行文本输入框 -->
+        <label for="search_qq">search the color</label>
+        <input type="search" id="search_qq">
+        <button>Search</button>
+
+        <input type="text" list="weblist">
+        <datalist id="weblist">
+            <!-- 和下拉列表中嵌套的是同一种标签option -->
+            <option value="https://www.baidu.com/" label="baidu"></option>
+            <option value="https://www.jd.com/" label="jingdong"></option>
+            <option value="https://www.baidu.com/" disabled>百度</option>
+        </datalist>
+        
+
+
+
+    </form>
+</body>
+</html>

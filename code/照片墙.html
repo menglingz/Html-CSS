@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: url(../img/222.jpeg);
+        background-size: cover;
+      }
+      .box {
+        height: 200px;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 0;
+      }
+      .box div {
+        width: 160px;
+        height: 160px;
+        background-color: white;
+        text-align: center;
+        display: inline-block;
+        transition: all 0.5s linear;
+      }
+      .box div img {
+        width: 140px;
+        height: 140px;
+        margin: 10px 10px;
+      }
+      .box div:nth-child(1):hover {
+        transform: translate(20px, 10px) skew(10deg, -30deg);
+      }
+      .box div:nth-child(2):hover {
+        transform: scale(1.5, 0.5) skew(20deg, -30deg);
+      }
+      .box div:nth-child(3):hover {
+        transform: rotateY(360deg) translate(30px, 20px);
+      }
+      .box div:nth-child(4):hover {
+        transform: skew(20deg, -20deg) translate(10px, 10px);
+      }
+      .box div:nth-child(5):hover {
+        transform: translateY(100px) rotate(180deg);
+      }
+      .box div:nth-child(6):hover {
+        transform: scale(0.8, 0.5) skew(20deg, 20deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div><img src="../img/11.gif" alt="" /></div>
+      <div><img src="../img/22.gif" alt="" /></div>
+      <div><img src="../img/33.gif" alt="" /></div>
+      <div><img src="../img/44.gif" alt="" /></div>
+      <div><img src="../img/55.gif" alt="" /></div>
+      <div><img src="../img/66.gif" alt="" /></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .nav{
+            width: 100%;
+            border: 1px solid red;
+        }
+        .nav .nav-content{
+            display: flex;
+            list-style: none;
+        }
+        .nav .nav-more{
+            flex: 1;
+            text-align: center;
+            border: 1px solid blue;
+            position: relative;
+            height: 40px;
+        }
+        .nav .menu{
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            height: 0px;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+        .nav-more:hover div{
+            height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul class="nav-content">
+            <li class="nav-more">
+                <a href="">首页</a>
+                <div class="menu">
+                    <ul class="menu-content">
+                        <li>王者荣耀</li>
+                        <li>和平精英</li>
+                        <li>QQ飞车</li>
+                        <li>火影忍者</li>
+                        <li>欢乐斗地主</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-more">武汉</li>
+            <li class="nav-more">济南</li>
+            <li class="nav-more">郑州</li>
+            <li class="nav-more">长沙</li>
+        </ul>
+    </div>
+</body>
+</html>

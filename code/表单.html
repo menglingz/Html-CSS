@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        border: 1px solid grey;
+        margin: 100px auto;
+        border-spacing: 0 0;
+      }
+      td {
+        border: 1px solid grey;
+        height: 50px;
+      }
+      td:nth-child(1) {
+        width: 50px;
+      }
+      td:nth-child(2) {
+        width: 400px;
+      }
+      input {
+        border-radius: 3px;
+        border-color: grey;
+        margin: 5px;
+      }
+      /* textarea {
+        resize: none;
+      } */
+      select {
+        width: 70px;
+        margin-left: 5px;
+      }
+      button {
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        margin: 7px;
+      }
+      .btnleft {
+        margin-left: 170px;
+      }
+      textarea {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <table id="box">
+        <tr>
+          <td>账号：</td>
+          <td style="text-align: center">
+            <input type="text" placeholder="手机/邮箱" style="width: 390px; height: 30px" name="username" />
+          </td>
+        </tr>
+        <tr>
+          <td>密码：</td>
+          <td style="text-align: center">
+            <input type="password" style="width: 390px; height: 30px" name="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>性别：</td>
+          <td>&nbsp;男<input type="radio" name="sex" value="man" checked /> 女<input type="radio" name="sex" value="women" /></td>
+        </tr>
+        <tr>
+          <td>爱好：</td>
+          <td id="favor">
+            &nbsp;篮球<input type="checkbox" name="favor" value="basketball" /> 足球<input type="checkbox" name="favor" value="football" checked />
+            <br />
+            &nbsp;乒乓球<input type="checkbox" name="favor" value="pingpang" checked /> 排球<input type="checkbox" name="favor" value="volleyball" />
+          </td>
+        </tr>
+        <tr>
+          <td>零食：</td>
+          <td>
+            <select name="foot">
+              <option value="ls" selected>饼干</option>
+              <option value="yl">饮料</option>
+              <option value="sp">薯片</option>
+              <option value="dg">蛋糕</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>意见<br />建议：</td>
+          <td>
+            <textarea name="suggest" cols="30" rows="7"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit" class="btnleft">提交</button>
+            <button type="reset">重置</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

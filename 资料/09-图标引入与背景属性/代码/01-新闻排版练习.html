@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../iconfont/iconfont/iconfont.css">
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        ul li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .wrap{
+            width: 300px;
+            height: 450px;
+            margin: 50px auto;
+
+        }
+        img{
+            width: 280px;
+            height: 180px;
+        }
+        .header{
+            height: 50px;
+            background-color: green;
+            line-height: 50px;
+            color: white;
+            font-size: 25px;
+            /* 字体加粗，取值400是普通大小 100-900*/
+            font-weight: 600;
+            padding-left: 10px;
+        }
+        .banner{
+            margin: 10px;
+            width: 280px;
+            height: 200px;
+            position: relative;
+        }
+        .banner .lunbo{
+            width: 280px;
+            height: 180px;
+            overflow: hidden;
+        }
+        .banner .lunbo::after{
+            content: "台媒：中美军舰";
+            color: black;
+            height: 30px;
+            width: 100%;
+            line-height: 30px;
+            display: block;
+            position: absolute;
+            top: 150px;
+            background-color: rgba(30, 30, 30, 0.5);
+        }
+        .banner ul{
+            position: absolute;
+            bottom: 0;
+            left: 130px;
+            z-index: 999;
+        }
+        .banner ul li{
+            float: left;
+            margin-right: 10px;
+            border: 1px solid black;
+            background-color: #ccc;
+            width: 7px;height: 7px;
+            border-radius: 50%;
+        }
+        .banner ul li a{
+            display: block;
+            width: 7px;height: 7px;
+        }
+        .banner .lunbo #pic1:target{
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .banner .lunbo #pic2:target{
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .main li::before{
+            content: "\e61e";
+            font-family: "iconfont";
+            color: blue;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">WIFI快报</div>
+        <div class="banner">
+            <div class="lunbo">
+                <img src="./mi8100.jpg" alt="" id="pic1">
+                <img src="./mi9000.jpg" alt="" id="pic2">
+            </div>
+            <ul>
+                <li><a href="#pic1"></a></li>
+                <li><a href="#pic2"></a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h2>港澳台：香港问题没有退让的余地</h2>
+            <ul>
+                <li><a href="">港澳台：香港问题没有退让的余地</a></li>
+                <li><a href="">港澳台：香港问题没有退让的余地</a></li>
+                <li><a href="">港澳台：香港问题没有退让的余地</a></li>
+                <li><a href="">港澳台：香港问题没有退让的余地</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

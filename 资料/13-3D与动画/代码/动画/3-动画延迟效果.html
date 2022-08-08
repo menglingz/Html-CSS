@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            margin: 100px auto;
+            /* 使元素变成一个弹性容器 */
+            display: flex;
+            justify-content: space-between;
+        }
+        .box div{
+            width: 30px;height: 30px;
+            background-color: rgba(0, 255, 64, 0.541);
+            border-radius: 50%;
+            animation: move 1s infinite;
+        }
+
+        @keyframes move{
+            0%,100%{transform: scale(1);}
+            50%{transform: scale(2);}
+        }
+        .box div:nth-child(1){
+            animation-delay: -1s;
+        }
+        .box div:nth-child(2){
+            animation-delay: -.9s;
+        }
+        .box div:nth-child(3){
+            animation-delay: -.8s;
+        }
+        .box div:nth-child(4){
+            animation-delay: -.7s;
+        }
+        .box div:nth-child(5){
+            animation-delay: -.6s;
+        }
+        .box div:nth-child(6){
+            animation-delay: -.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            /* 线性渐变
+            linear-gradient（渐变方向,颜色一 位置,颜色二 位置,...）
+            方向可取可不取，不取时，默认向下，取值时，0deg朝上（浏览器之间会有区别）
+            颜色取值至少两个
+            默认不取位置值时，多种颜色等分渐变过程
+            */
+            background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #FF1361 67%, #FFF800 100%);
+            background-image: linear-gradient(to right bottom, #231557 0%, #44107a 29%, #FF1361 67%, #FFF800 100%);
+
+
+
+            
+        }
+                 
+        .btn-grad {
+            background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; 
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+    </style>
+</head>
+<body>
+    <div></div>
+    <div class="btn-grad"></div>
+</body>
+</html>

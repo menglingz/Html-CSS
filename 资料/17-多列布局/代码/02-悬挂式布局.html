@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article,
+        h2,
+        section,
+        div,
+        img,
+        p{
+            padding: 0;margin: 0;
+        }
+        html,
+        body{
+            height: 100%;
+            background-color: rgb(228, 207, 180);
+        }
+        article{
+            height: 90%;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+            height: 90%;
+        }
+        section div{
+            width: 45%;
+            display: flex;
+            padding: 1em;
+            align-items: flex-start;
+            background-color: aliceblue;
+            margin-bottom: 1em;
+        }
+        section div img{
+            width: 20%;
+            margin: 0 1em;
+
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h2>Basic Examples</h2>
+        <section>
+            <div class="media">
+                <img src="./图文猫.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt laudantium amet obcaecati eius eligendi minima in, distinctio, rerum alias corporis quisquam adipisci enim. Neque eos rerum, suscipit deserunt a itaque?
+
+                </p>
+            </div>
+            <div class="media">
+                <img src="./图文猫.png" alt="">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aperiam molestiae consectetur quisquam recusandae minima, ipsum quo nulla sunt nobis! Odio illum officia sequi eius perferendis expedita tempora excepturi aperiam?
+                </p>
+            </div>
+            <div class="media">
+                <img src="./图文猫.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex veniam et fugiat fugit aliquid expedita deserunt, odit accusamus nobis quas quae unde id, atque quos! Deleniti accusamus facere eius ea.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate accusantium explicabo dignissimos similique quod ipsam velit vel modi architecto, error aperiam, recusandae maxime. In nam esse, nobis ullam veritatis ad.
+                </p>
+            </div>
+        </section>
+    </article>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .main {
+        width: 800px;
+        height: 380px;
+        background-color: antiquewhite;
+        margin: 30px auto;
+      }
+      .sidenav {
+        height: 380px;
+        width: 150px;
+        background-color: #ccc;
+      }
+      .page1 {
+        position: relative;
+      }
+      .page1 li {
+        height: 40px;
+        line-height: 40px;
+      }
+      .page1 li div {
+        width: 650px;
+        height: 380px;
+        background-color: green;
+        display: none;
+        font-size: 30px;
+        color: white;
+      }
+      .page1 li:hover div.a {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidenav">
+        <ul class="page1">
+          <li>
+            家电
+            <div class="a">1</div>
+          </li>
+          <li>
+            家电
+            <div class="a">2</div>
+          </li>
+          <li>
+            家电
+            <div class="a">3</div>
+          </li>
+          <li>
+            家电
+            <div class="a">4</div>
+          </li>
+          <li>
+            家电
+            <div class="a">5</div>
+          </li>
+          <li>
+            家电
+            <div class="a">6</div>
+          </li>
+          <li>
+            家电
+            <div class="a">7</div>
+          </li>
+          <li>
+            家电
+            <div class="a">8</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

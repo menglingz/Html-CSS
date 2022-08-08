@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      ol,
+      li,
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+      }
+
+      header {
+        background-color: #f47d31;
+        width: 100%;
+        height: 100px;
+        color: white;
+        font-size: 70px;
+        line-height: 100px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      footer {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        background-color: #f47d31;
+      }
+
+      main {
+        width: 100%;
+        height: calc(100% - 150px);
+        background-color: #888888;
+        display: flex;
+      }
+
+      nav {
+        width: 400px;
+        height: 100%;
+      }
+
+      aside {
+        width: 400px;
+        height: 100%;
+      }
+
+      section {
+        box-sizing: border-box;
+        width: calc(100% - 800px);
+        height: 100%;
+      }
+
+      figure {
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        width: 100%;
+        color: white;
+        font-size: 30px;
+      }
+
+      main nav ul {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      main nav ul li {
+        width: 380px;
+        height: 50px;
+        line-height: 50px;
+        color: orange;
+        margin: 0 10px;
+        border-bottom: 5px solid white;
+        box-sizing: border-box;
+        padding-left: 15px;
+      }
+
+      main nav ul::after {
+        content: '';
+        display: block;
+        visibility: hidden;
+        height: 0;
+        clear: both;
+      }
+
+      aside p {
+        width: 340px;
+        margin: 0 30px;
+        color: white;
+        font-size: 17px;
+        text-align: left;
+      }
+
+      section article:nth-child(1) {
+        background-color: white;
+        width: 100%;
+        height: 300px;
+        margin: 14px 0;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+
+      section article:nth-child(2) {
+        background-color: white;
+        width: 100%;
+        height: 230px;
+        margin-bottom: 10px;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+
+      article header {
+        background-color: #f47d31;
+        width: calc(100% - 20px);
+        height: 40px;
+        margin: 0 10px;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+        font-size: 23px;
+      }
+
+      article footer {
+        background-color: #f47d31;
+        width: calc(100% - 20px);
+        height: 40px;
+        margin: 0 10px;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+        font-size: 23px;
+        font-weight: bold;
+      }
+      article p {
+        width: 100%;
+        height: calc(100% - 80px);
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <header>Header</header>
+      <main>
+        <nav>
+          <figure>Nav</figure>
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+          </ul>
+        </nav>
+        <section>
+          <article>
+            <header>Article Header</header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi incidunt ut ad blanditiis nulla animi a culpa necessitatibus, at consequuntur alias odit ipsam aliquid! Eos natus itaque officia nam explicabo?</p>
+            <footer>Aritcle Footer</footer>
+          </article>
+          <article>
+            <header>Article Header</header>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam vel, ex at velit sequi molestias maiores natus vero perferendis enim distinctio consequatur, cumque assumenda, dolore sapiente fugiat aliquid suscipit repudiandae?</p>
+            <footer>Aricle Footer</footer>
+          </article>
+        </section>
+        <aside>
+          <figure>Aside</figure>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, labore nihil deserunt provident fugit minus perspiciatis debitis, autem tempora nulla deleniti, odio quibusdam? Maiores, nobis. Odio optio aliquid inventore eum?</p>
+        </aside>
+      </main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

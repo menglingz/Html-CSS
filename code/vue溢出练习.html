@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul,
+    li,
+    ol {
+      list-style: none;
+    }
+
+    .navbar {
+      padding: 0.7rem 1.5rem;
+      line-height: 2.2rem;
+    }
+
+    .navbar {
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.6rem;
+      background-color: #fff;
+      box-sizing: border-box;
+      border-bottom: 1px solid #eaecef;
+    }
+
+    .sidebar-button {
+      cursor: pointer;
+      display: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      position: absolute;
+      padding: 0.6rem;
+      top: 0.6rem;
+      left: 1rem;
+    }
+
+    .navbar a,
+    .navbar img {
+      display: inline-block;
+    }
+
+    .navbar .links {
+      padding-left: 1.5rem;
+      box-sizing: border-box;
+      background-color: #fff;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 0.7rem;
+      display: flex;
+    }
+
+    .sidebar-button .icon {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    user agent stylesheet svg:not(:root) {
+      overflow: hidden;
+    }
+
+    user agent stylesheet:not(svg) {
+      transform-origin: 0px 0px;
+    }
+
+    .navbar .logo {
+      height: 2.2rem;
+      min-width: 2.2rem;
+      margin-right: 0.5rem;
+      vertical-align: top;
+    }
+
+    .navbar a,
+    .navbar img {
+      display: inline-block;
+    }
+
+    .navbar .site-name {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2c3e50;
+      position: relative;
+    }
+
+    .nav-links {
+      display: inline-block;
+    }
+
+    .nav-links .nav-item:first-child {
+      margin-left: 0;
+    }
+
+    .nav-links .nav-item {
+      position: relative;
+      display: inline-block;
+      margin-left: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .dropdown-wrapper .dropdown-title {
+      display: block;
+      font-size: .9rem;
+      font-family: inherit;
+      cursor: inherit;
+      padding: inherit;
+      line-height: 1.4rem;
+      background: transparent;
+      border: none;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+
+    .dropdown-wrapper .nav-dropdown {
+      display: none;
+      height: auto !important;
+      box-sizing: border-box;
+      max-height: calc(100vh - 2.7rem);
+      overflow-y: auto;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #fff;
+      padding: 0.6rem 0;
+      border: 1px solid;
+      border-color: #ddd #ddd #ccc;
+      text-align: left;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    .dropdown-wrapper .dropdown-title .arrow {
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 6px solid #ccc;
+      border-bottom: 0;
+    }
+
+    .dropdown-wrapper .dropdown-title .arrow {
+      vertical-align: middle;
+      margin-top: -1px;
+      margin-left: 0.4rem;
+    }
+
+    .arrow.left,
+    .arrow.right {
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+    }
+
+    .arrow.right {
+      border-left: 6px solid #ccc;
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+    }
+
+    .dropdown-wrapper .nav-dropdown .dropdown-item {
+      color: inherit;
+      line-height: 1.7rem;
+    }
+
+    .dropdown-wrapper .nav-dropdown .dropdown-item a {
+      display: block;
+      line-height: 1.7rem;
+      position: relative;
+      border-bottom: none;
+      font-weight: 400;
+      margin-bottom: 0;
+      padding: 0 1.5rem 0 1.25rem;
+    }
+
+    .dropdown-wrapper .nav-dropdown .dropdown-item a {
+      display: block;
+      line-height: 1.7rem;
+      position: relative;
+      border-bottom: none;
+      font-weight: 400;
+      margin-bottom: 0;
+      padding: 0 1.5rem 0 1.25rem;
+    }
+
+    .navbar a,
+    .navbar img {
+      display: inline-block;
+    }
+
+    .nav-links a {
+      line-height: 1.4rem;
+      color: inherit;
+      font-weight: 500;
+    }
+
+    .DocSearch-Button {
+      align-items: center;
+      background: var(--docsearch-searchbox-background);
+      border: 0;
+      border-radius: 40px;
+      color: var(--docsearch-muted-color);
+      cursor: pointer;
+      display: flex;
+      font-weight: 500;
+      height: 36px;
+      margin: 0 0 0 16px;
+      padding: 0 8px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .dropdown-wrapper {
+      cursor: pointer;
+    }
+
+    .sidebar-mask {
+      position: fixed;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+    }
+
+    .sidebar {
+      font-size: 16px;
+      background-color: #fff;
+      width: 20rem;
+      position: fixed;
+      z-index: 10;
+      margin: 0;
+      top: 3.6rem;
+      left: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      border-right: 1px solid #eaecef;
+      overflow-y: auto;
+    }
+
+    .sidebar .nav-links {
+      display: none;
+      border-bottom: 1px solid #eaecef;
+      padding: 0.5rem 0 0.75rem;
+    }
+
+    .sidebar>.sidebar-links {
+      padding: 1.5rem 0;
+    }
+
+    .sidebar ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    ol,
+    p,
+    ul {
+      line-height: 1.7;
+    }
+
+    .sidebar-heading {
+      color: #2c3e50;
+      transition: color 0.15s ease;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 700;
+      padding: 0.35rem 1.5rem 0.35rem 1.25rem;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      border-left: 0.25rem solid transparent;
+    }
+
+    p {
+      -webkit-margin-before: 1em;
+      margin-block-start: 1em;
+      -webkit-margin-after: 1em;
+      margin-block-end: 1em;
+      -webkit-margin-start: 0;
+      margin-inline-start: 0;
+      -webkit-margin-end: 0;
+      margin-inline-end: 0;
+    }
+
+    .sidebar ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    .sidebar-group-items {
+      transition: height 0.1s ease-out;
+      font-size: 0.95em;
+      overflow: hidden;
+    }
+
+    .sidebar-group a.sidebar-link {
+      padding-left: 2rem;
+    }
+
+    a.sidebar-link.active {
+      font-weight: 600;
+      color: #3eaf7c;
+      border-left-color: #3eaf7c;
+    }
+
+    .sidebar .sidebar-sub-headers {
+      padding-left: 1rem;
+      font-size: 0.95em;
+    }
+
+    .sidebar-sub-headers a.sidebar-link {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      border-left: none;
+    }
+
+    a.sidebar-link {
+      font-size: 1em;
+      font-weight: 400;
+      display: inline-block;
+      color: #2c3e50;
+      border-left: 0.25rem solid transparent;
+      padding: 0.35rem 1rem 0.35rem 1.25rem;
+      line-height: 1.4;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-group.is-sub-group>.sidebar-group-items {
+      padding-left: 1rem;
+    }
+
+    .page {
+      padding-bottom: 2rem;
+      display: block;
+      padding-left: 20rem;
+    }
+
+    .carbon-ads {
+      min-height: 102px;
+      font-size: 0.75rem;
+      width: 125px;
+      position: fixed;
+      z-index: 1;
+      bottom: 14px;
+      right: 14px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: hsla(0, 0%, 100%, 0.8);
+    }
+
+    .theme-default-content:not(.custom) {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+    }
+
+    .page-edit[data-v-007274aa] {
+      padding: 0 1.5rem;
+      max-width: 740px;
+      margin: 0 auto;
+      font-size: 0.95em;
+      color: #4f5959;
+      text-align: center;
+    }
+
+    .page-nav {
+      padding-top: 1rem;
+      padding-bottom: 0;
+    }
+
+    .page-nav {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+    }
+
+    .bsa-cpc-wrapper {
+      font-size: 0.95rem;
+      max-width: 50rem;
+      padding: 1rem 2rem 0;
+      margin: 0 auto -1rem;
+    }
+
+    .carbon-ads {
+      min-height: 102px;
+      font-size: 0.75rem;
+      width: 125px;
+      position: fixed;
+      z-index: 1;
+      bottom: 14px;
+      right: 14px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: hsla(0, 0%, 100%, 0.8);
+    }
+
+    .carbon-ads .carbon-poweredby {
+      color: #999;
+      display: block;
+      margin-top: 0.5em;
+    }
+
+    .carbon-ads a {
+      color: #444;
+      font-weight: 400;
+      display: inline;
+    }
+
+    .carbon-ads .carbon-img img {
+      display: block;
+      width: 125px;
+    }
+
+    .theme-default-content:not(.custom)>h1:first-child,
+    .theme-default-content:not(.custom)>h2:first-child,
+    .theme-default-content:not(.custom)>h3:first-child,
+    .theme-default-content:not(.custom)>h4:first-child,
+    .theme-default-content:not(.custom)>h5:first-child,
+    .theme-default-content:not(.custom)>h6:first-child {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: -1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .theme-default-content:not(.custom)> :first-child {
+      margin-top: 3.6rem;
+    }
+
+    .theme-default-content:not(.custom)>h1,
+    .theme-default-content:not(.custom)>h2,
+    .theme-default-content:not(.custom)>h3,
+    .theme-default-content:not(.custom)>h4,
+    .theme-default-content:not(.custom)>h5,
+    .theme-default-content:not(.custom)>h6 {
+      margin-top: -3.1rem;
+      padding-top: 4.6rem;
+      margin-bottom: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    user agent stylesheet h1 {
+      display: block;
+      font-size: 2em;
+      margin-block-start: 0.67em;
+      margin-block-end: 0.67em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+
+    .theme-default-content:not(.custom)>h1:first-child+.custom-block,
+    .theme-default-content:not(.custom)>h1:first-child+p,
+    .theme-default-content:not(.custom)>h1:first-child+pre,
+    .theme-default-content:not(.custom)>h2:first-child+.custom-block,
+    .theme-default-content:not(.custom)>h2:first-child+p,
+    .theme-default-content:not(.custom)>h2:first-child+pre,
+    .theme-default-content:not(.custom)>h3:first-child+.custom-block,
+    .theme-default-content:not(.custom)>h3:first-child+p,
+    .theme-default-content:not(.custom)>h3:first-child+pre,
+    .theme-default-content:not(.custom)>h4:first-child+.custom-block,
+    .theme-default-content:not(.custom)>h4:first-child+p,
+    .theme-default-content:not(.custom)>h4:first-child+pre,
+    .theme-default-content:not(.custom)>h5:first-child+.custom-block,
+    .theme-default-content:not(.custom)>h5:first-child+p,
+    .theme-default-content:not(.custom)>h5:first-child+pre,
+    .theme-default-content:not(.custom)>h6:first-child+.custom-block,
+    .theme-default-content:not(.custom)>h6:first-child+p,
+    .theme-default-content:not(.custom)>h6:first-child+pre {
+      margin-top: 2rem;
+    }
+
+    p {
+      -webkit-margin-before: 1em;
+      margin-block-start: 1em;
+      -webkit-margin-after: 1em;
+      margin-block-end: 1em;
+      -webkit-margin-start: 0;
+      margin-inline-start: 0;
+      -webkit-margin-end: 0;
+      margin-inline-end: 0;
+    }
+
+    a.header-anchor {
+      font-size: 0.85em;
+      float: left;
+      margin-left: -0.87em;
+      padding-right: 0.23em;
+      margin-top: 0.125em;
+      opacity: 0;
+    }
+
+    .page-edit .container[data-v-007274aa] {
+      border: 1px solid #eaecef;
+      border-radius: 5px;
+      padding: 0 1.5rem;
+    }
+
+    .page-edit p[data-v-007274aa] {
+      margin: 0.8rem auto;
+    }
+
+    .edit-link[data-v-007274aa] {
+      margin-bottom: 0.5rem;
+    }
+
+    .ykplayer .x-endPanel div,
+    a,
+    p,
+    span {
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .page-nav .inner {
+      min-height: 2rem;
+      margin-top: 0;
+      padding-top: 1rem;
+      overflow: auto;
+    }
+
+    .page-nav .next {
+      float: right;
+    }
+
+    a,
+    p a code {
+      color: #3eaf7c;
+    }
+
+    .bsa-cpc {
+      font-size: 0.9em;
+      background-color: #f8f8f8;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="theme-container">
+      <!---->
+      <header class="navbar">
+        <div class="sidebar-button">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
+          </svg>
+        </div>
+        <a href="/" class="home-link router-link-active"><img src="https://v3.cn.vuejs.org/logo.png" alt="Vue.js"
+            class="logo" /> <span class="site-name can-hide">Vue.js</span></a>
+        <div class="links" style="max-width: 1410px">
+          <!---->
+          <nav class="nav-links can-hide">
+            <div class="nav-item">
+              <div class="dropdown-wrapper">
+                <button type="button" aria-label="文档菜单" class="dropdown-title"><span class="title">文档</span> <span
+                    class="arrow right"></span></button>
+                <ul class="nav-dropdown" style="display: none">
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 教程 </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 风格指南 </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> Cookbook </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 示例 </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 贡献文档 </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 从 Vue 2 迁移 </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-item"><a href="/api/" class="nav-link"> API 参考 </a></div>
+            <div class="nav-item">
+              <div class="dropdown-wrapper">
+                <button type="button" aria-label="生态系统" class="dropdown-title"><span class="title">生态系统</span> <span
+                    class="arrow right"></span></button>
+                <ul class="nav-dropdown" style="display: none">
+                  <li class="dropdown-item">
+                    <h4>社区</h4>
+                    <ul class="dropdown-subitem-wrapper">
+                      <li class="dropdown-subitem"><a href="javascript:;" class="nav-link"> 团队 </a></li>
+                      <li class="dropdown-subitem"><a href="javascript:;" class="nav-link"> 合作伙伴 </a></li>
+                      <li class="dropdown-subitem"><a href="javascript:;" class="nav-link"> 加入 </a></li>
+                      <li class="dropdown-subitem"><a href="javascript:;" class="nav-link"> 主题 </a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-item">
+                    <h4>官方项目</h4>
+                    <ul class="dropdown-subitem-wrapper">
+                      <li class="dropdown-subitem">
+                        <a href="javascript:;" target="_blank" rel="noopener noreferrer" class="nav-link external">
+                          Vue Router
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem">
+                        <a href="javascript:;" target="_blank" rel="noopener noreferrer" class="nav-link external">
+                          Vuex
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem">
+                        <a href="https://cli.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                          class="nav-link external">
+                          Vue CLI
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem">
+                        <a href="https://next.vue-test-utils.vuejs.org/guide/" target="_blank" rel="noopener noreferrer"
+                          class="nav-link external">
+                          Vue Test Utils
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem">
+                        <a href="https://devtools.vuejs.org" target="_blank" rel="noopener noreferrer"
+                          class="nav-link external">
+                          Devtools
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem">
+                        <a href="https://news.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                          class="nav-link external">
+                          Weekly news
+                        </a>
+                      </li>
+                      <li class="dropdown-subitem">
+                        <a href="https://blog.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                          class="nav-link external">
+                          Blog
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-item">
+              <div class="dropdown-wrapper">
+                <button type="button" aria-label="支持 Vue" class="dropdown-title"><span class="title">支持 Vue</span> <span
+                    class="arrow right"></span></button>
+                <ul class="nav-dropdown" style="display: none">
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 一次性捐款 </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" class="nav-link"> 周期性捐款 </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" target="_blank" rel="noopener noreferrer" class="nav-link external">
+                      贴纸
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" target="_blank" rel="noopener noreferrer" class="nav-link external">
+                      周边
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="javascript:;" target="_blank" rel="noopener noreferrer" class="nav-link external">
+                      T-Shirt 商店
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-item">
+              <div class="dropdown-wrapper">
+                <button type="button" aria-label="多语言" class="dropdown-title"><span class="title">多语言</span> <span
+                    class="arrow right"></span></button>
+                <ul class="nav-dropdown" style="display: none">
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="https://v3.vuejs.org/guide/installation.html" target="_blank" class="nav-link external">
+                      English
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="https://v3.ko.vuejs.org/guide/installation.html" target="_blank" class="nav-link external">
+                      한국어
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="https://v3.ja.vuejs.org/guide/installation.html" target="_blank" class="nav-link external">
+                      日本語
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="https://v3.ru.vuejs.org/ru/guide/installation.html" target="_blank"
+                      class="nav-link external">
+                      Русский
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <!---->
+                    <a href="/guide/contributing/translations.html#community-translations" class="nav-link"> 更多翻译 </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="https://github.com/vuejs/docs-next-zh-cn" target="_blank" rel="noopener noreferrer"
+              class="repo-link">
+              GitHub
+            </a>
+          </nav>
+          <div id="docsearch">
+            <button type="button" class="DocSearch DocSearch-Button" aria-label="Search">
+              <svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20">
+                <path
+                  d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                  stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg><span class="DocSearch-Button-Placeholder">Search</span><span class="DocSearch-Button-Key"><svg
+                  width="15" height="15" class="DocSearch-Control-Key-Icon">
+
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="sidebar-mask"></div>
+      <aside class="sidebar">
+        <nav class="nav-links">
+          <div class="nav-item">
+            <div class="dropdown-wrapper">
+              <button type="button" aria-label="文档菜单" class="dropdown-title"><span class="title">文档</span> <span
+                  class="arrow right"></span></button>
+              <ul class="nav-dropdown" style="display: none">
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/guide/introduction.html" class="nav-link"> 教程 </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/style-guide/" class="nav-link"> 风格指南 </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/cookbook/" class="nav-link"> Cookbook </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/examples/markdown.html" class="nav-link"> 示例 </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/guide/contributing/writing-guide.html" class="nav-link"> 贡献文档 </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/guide/migration/introduction.html" class="nav-link"> 从 Vue 2 迁移 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-item"><a href="/api/" class="nav-link"> API 参考 </a></div>
+          <div class="nav-item">
+            <div class="dropdown-wrapper">
+              <button type="button" aria-label="生态系统" class="dropdown-title"><span class="title">生态系统</span> <span
+                  class="arrow right"></span></button>
+              <ul class="nav-dropdown" style="display: none">
+                <li class="dropdown-item">
+                  <h4>社区</h4>
+                  <ul class="dropdown-subitem-wrapper">
+                    <li class="dropdown-subitem"><a href="/community/team/" class="nav-link"> 团队 </a></li>
+                    <li class="dropdown-subitem"><a href="/community/partners.html" class="nav-link"> 合作伙伴 </a></li>
+                    <li class="dropdown-subitem"><a href="/community/join/" class="nav-link"> 加入 </a></li>
+                    <li class="dropdown-subitem"><a href="/community/themes/" class="nav-link"> 主题 </a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-item">
+                  <h4>官方项目</h4>
+                  <ul class="dropdown-subitem-wrapper">
+                    <li class="dropdown-subitem">
+                      <a href="https://next.router.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Vue Router
+                      </a>
+                    </li>
+                    <li class="dropdown-subitem">
+                      <a href="https://next.vuex.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Vuex
+                      </a>
+                    </li>
+                    <li class="dropdown-subitem">
+                      <a href="https://cli.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Vue CLI
+                      </a>
+                    </li>
+                    <li class="dropdown-subitem">
+                      <a href="https://next.vue-test-utils.vuejs.org/guide/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Vue Test Utils
+                      </a>
+                    </li>
+                    <li class="dropdown-subitem">
+                      <a href="https://devtools.vuejs.org" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Devtools
+                      </a>
+                    </li>
+                    <li class="dropdown-subitem">
+                      <a href="https://news.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Weekly news
+                      </a>
+                    </li>
+                    <li class="dropdown-subitem">
+                      <a href="https://blog.vuejs.org/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link external">
+                        Blog
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-item">
+            <div class="dropdown-wrapper">
+              <button type="button" aria-label="支持 Vue" class="dropdown-title"><span class="title">支持 Vue</span> <span
+                  class="arrow right"></span></button>
+              <ul class="nav-dropdown" style="display: none">
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/support-vuejs/#一次性捐款" class="nav-link"> 一次性捐款 </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/support-vuejs/#周期性赞助" class="nav-link"> 周期性捐款 </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://www.smallsticker.com/%E8%B4%B4%E7%BA%B8/vue.html" target="_blank"
+                    rel="noopener noreferrer" class="nav-link external">
+                    贴纸
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img"
+                      focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                      class="icon outbound">
+                      <title id="outbound-link-title">(opens new window)</title>
+                      <path fill="currentColor"
+                        d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                      </path>
+                      <polygon fill="currentColor"
+                        points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                      </polygon>
+                    </svg></a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://osholic.com/?utm_source=vue&amp;utm_medium=dropdown" target="_blank"
+                    rel="noopener noreferrer" class="nav-link external">
+                    周边
+                  </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://vue.threadless.com/" target="_blank" rel="noopener noreferrer"
+                    class="nav-link external">
+                    T-Shirt 商店
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-item">
+            <div class="dropdown-wrapper">
+              <button type="button" aria-label="多语言" class="dropdown-title"><span class="title">多语言</span> <span
+                  class="arrow right"></span></button>
+              <ul class="nav-dropdown" style="display: none">
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://v3.vuejs.org/guide/installation.html" target="_blank" class="nav-link external">
+                    English
+                  </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://v3.ko.vuejs.org/guide/installation.html" target="_blank" class="nav-link external">
+                    한국어
+                  </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://v3.ja.vuejs.org/guide/installation.html" target="_blank" class="nav-link external">
+                    日本語
+                  </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="https://v3.ru.vuejs.org/ru/guide/installation.html" target="_blank"
+                    class="nav-link external">
+                    Русский
+                  </a>
+                </li>
+                <li class="dropdown-item">
+                  <!---->
+                  <a href="/guide/contributing/translations.html#community-translations" class="nav-link"> 更多翻译 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://github.com/vuejs/docs-next-zh-cn" target="_blank" rel="noopener noreferrer"
+            class="repo-link">
+            GitHub
+          </a>
+        </nav>
+        <ul class="sidebar-links">
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading open">
+                <span>基础</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li>
+                  <a href="/guide/installation.html" aria-current="page" class="active sidebar-link">安装</a>
+                  <ul class="sidebar-sub-headers">
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#发布版本说明"
+                        class="sidebar-link">发布版本说明</a></li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#vue-devtools"
+                        class="sidebar-link">Vue Devtools</a></li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#cdn" class="sidebar-link">CDN</a>
+                    </li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#下载并自托管"
+                        class="sidebar-link">下载并自托管</a></li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#npm" class="sidebar-link">npm</a>
+                    </li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#命令行工具-cli"
+                        class="sidebar-link">命令行工具 (CLI)</a></li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#vite" class="sidebar-link">Vite</a>
+                    </li>
+                    <li class="sidebar-sub-header">
+                      <a href="/guide/installation.html#对不同构建版本的解释" class="sidebar-link">对不同构建版本的解释</a>
+                      <ul class="sidebar-sub-headers">
+                        <li class="sidebar-sub-header"><a href="/guide/installation.html#使用-cdn-或没有构建工具"
+                            class="sidebar-link">使用 CDN 或没有构建工具</a></li>
+                        <li class="sidebar-sub-header"><a href="/guide/installation.html#使用构建工具"
+                            class="sidebar-link">使用构建工具</a></li>
+                        <li class="sidebar-sub-header"><a href="/guide/installation.html#对于服务端渲染"
+                            class="sidebar-link">对于服务端渲染</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-sub-header"><a href="/guide/installation.html#运行时-编译器-vs-仅运行时"
+                        class="sidebar-link">运行时 + 编译器 vs. 仅运行时</a></li>
+                  </ul>
+                </li>
+                <li><a href="/guide/introduction.html" class="sidebar-link">介绍</a></li>
+                <li><a href="/guide/instance.html" class="sidebar-link">应用 &amp; 组件实例</a></li>
+                <li><a href="/guide/template-syntax.html" class="sidebar-link">模板语法</a></li>
+                <li><a href="/guide/data-methods.html" class="sidebar-link">Data Property 和方法</a></li>
+                <li><a href="/guide/computed.html" class="sidebar-link">计算属性和侦听器</a></li>
+                <li><a href="/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a></li>
+                <li><a href="/guide/conditional.html" class="sidebar-link">条件渲染</a></li>
+                <li><a href="/guide/list.html" class="sidebar-link">列表渲染</a></li>
+                <li><a href="/guide/events.html" class="sidebar-link">事件处理</a></li>
+                <li><a href="/guide/forms.html" class="sidebar-link">表单输入绑定</a></li>
+                <li><a href="/guide/component-basics.html" class="sidebar-link">组件基础</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>深入组件</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a href="/guide/component-registration.html" class="sidebar-link">组件注册</a></li>
+                <li><a href="/guide/component-props.html" class="sidebar-link">Props</a></li>
+                <li><a href="/guide/component-attrs.html" class="sidebar-link">非 Prop 的 Attribute</a></li>
+                <li><a href="/guide/component-custom-events.html" class="sidebar-link">自定义事件</a></li>
+                <li><a href="/guide/component-slots.html" class="sidebar-link">插槽</a></li>
+                <li><a href="/guide/component-provide-inject.html" class="sidebar-link">Provide / Inject</a></li>
+                <li><a href="/guide/component-dynamic-async.html" class="sidebar-link">动态组件 &amp; 异步组件</a></li>
+                <li><a href="/guide/component-template-refs.html" class="sidebar-link">模板引用</a></li>
+                <li><a href="/guide/component-edge-cases.html" class="sidebar-link">处理边界情况</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>过渡 &amp; 动画</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a href="/guide/transitions-overview.html" class="sidebar-link">过渡 &amp; 动画概述</a></li>
+                <li><a href="/guide/transitions-enterleave.html" class="sidebar-link">进入过渡 &amp; 离开过渡</a></li>
+                <li><a href="/guide/transitions-list.html" class="sidebar-link">列表过渡</a></li>
+                <li><a href="/guide/transitions-state.html" class="sidebar-link">状态过渡</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>可复用 &amp; 组合</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li>
+                  <section class="sidebar-group collapsable is-sub-group depth-1">
+                    <p class="sidebar-heading open"><span>组合式 API</span> <span class="arrow down"></span></p>
+                    <ul class="sidebar-links sidebar-group-items">
+                      <li><a href="/guide/composition-api-introduction.html" class="sidebar-link">介绍</a></li>
+                      <li><a href="/guide/composition-api-setup.html" class="sidebar-link">Setup</a></li>
+                      <li><a href="/guide/composition-api-lifecycle-hooks.html" class="sidebar-link">生命周期钩子</a></li>
+                      <li><a href="/guide/composition-api-provide-inject.html" class="sidebar-link">Provide / Inject</a>
+                      </li>
+                      <li><a href="/guide/composition-api-template-refs.html" class="sidebar-link">模板引用</a></li>
+                    </ul>
+                  </section>
+                </li>
+                <li><a href="/guide/mixins.html" class="sidebar-link">Mixin</a></li>
+                <li><a href="/guide/custom-directive.html" class="sidebar-link">自定义指令</a></li>
+                <li><a href="/guide/teleport.html" class="sidebar-link">Teleport</a></li>
+                <li><a href="/guide/render-function.html" class="sidebar-link">渲染函数</a></li>
+                <li><a href="/guide/plugins.html" class="sidebar-link">插件</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>高阶指南</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a href="/guide/web-components.html" class="sidebar-link">Vue 与 Web Components</a></li>
+                <li>
+                  <section class="sidebar-group collapsable is-sub-group depth-1">
+                    <p class="sidebar-heading"><span>响应性</span> <span class="arrow right"></span></p>
+                    <!---->
+                  </section>
+                </li>
+                <li><a href="/guide/optimizations.html" class="sidebar-link">渲染机制和优化</a></li>
+                <li><a href="/guide/change-detection.html" class="sidebar-link">Vue 2 中更改检测的注意事项</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>工具</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a href="/guide/single-file-component.html" class="sidebar-link">单文件组件</a></li>
+                <li><a href="/guide/testing.html" class="sidebar-link">测试</a></li>
+                <li><a href="/guide/typescript-support.html" class="sidebar-link">TypeScript 支持</a></li>
+                <li><a href="/guide/mobile.html" class="sidebar-link">移动端</a></li>
+                <li><a href="/guide/tooling/deployment.html" class="sidebar-link">生产环境部署</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>规模化</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a href="/guide/routing.html" class="sidebar-link">路由</a></li>
+                <li><a href="/guide/state-management.html" class="sidebar-link">状态管理</a></li>
+                <li><a href="/guide/ssr.html" class="sidebar-link">服务端渲染</a></li>
+                <li><a href="/guide/security.html" class="sidebar-link">安全</a></li>
+              </ul>
+            </section>
+          </li>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading">
+                <span>无障碍</span>
+                <!---->
+              </p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a href="/guide/a11y-basics.html" class="sidebar-link">基础</a></li>
+                <li><a href="/guide/a11y-semantics.html" class="sidebar-link">语义</a></li>
+                <li><a href="/guide/a11y-standards.html" class="sidebar-link">标准</a></li>
+                <li><a href="/guide/a11y-resources.html" class="sidebar-link">资源</a></li>
+              </ul>
+            </section>
+          </li>
+        </ul>
+      </aside>
+      <main class="page">
+        <div class="carbon-ads">
+          <script id="_carbonads_js" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&amp;placement=vuejsorg"></script>
+          <div id="carbonads">
+            <span><span class="carbon-wrap"><a
+                  href="https://srv.carbonads.net/ads/click/x/GTND42JMCESI423YF6ALYKQNCWBIT53UC6AD4Z3JCYBIPKQEC67IV2QKFTYICK7MCVSI453LC6SDKKJEC6YI553KC6SDP23NFTAIKK3EHJNCLSIZ?segment=placement:vuejsorg;"
+                  class="carbon-img" target="_blank" rel="noopener sponsored"><img
+                    src="https://cdn4.buysellads.net/uu/1/41334/1550855391-cc_dark.png" alt="ads via Carbon" border="0"
+                    height="100" width="130" style="max-width: 130px" /></a><a
+                  href="https://srv.carbonads.net/ads/click/x/GTND42JMCESI423YF6ALYKQNCWBIT53UC6AD4Z3JCYBIPKQEC67IV2QKFTYICK7MCVSI453LC6SDKKJEC6YI553KC6SDP23NFTAIKK3EHJNCLSIZ?segment=placement:vuejsorg;"
+                  class="carbon-text" target="_blank" rel="noopener sponsored">Adobe Creative Cloud for Teams starting
+                  at $33.99 per month.</a></span><a
+                href="http://carbonads.net/?utm_source=vuejsorg&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon"
+                class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a></span>
+          </div>
+        </div>
+        <div class="theme-default-content content__default">
+          <h1 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h1>
+          <p>Vue.js 设计的初衷就包括可以被渐进式地采用。这意味着它可以根据需求以多种方式集成到一个项目中。</p>
+          <p>将 Vue.js 添加到项目中主要有四种方式：</p>
+          <ol>
+            <li>在页面上以 <a href="#cdn">CDN 包</a>的形式导入。</li>
+            <li>下载 JavaScript 文件并<a href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%87%AA%E6%89%98%E7%AE%A1">自行托管</a>。</li>
+            <li>使用 <a href="#npm">npm</a> 安装它。</li>
+            <li>使用官方的 <a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-cli">CLI</a>
+              来构建一个项目，它为现代前端工作流程提供了功能齐备的构建设置 (例如，热重载、保存时的提示等等)。</li>
+          </ol>
+          <h2 id="发布版本说明"><a href="#发布版本说明" class="header-anchor">#</a> 发布版本说明</h2>
+          <p>最新版本：<img src="https://img.shields.io/npm/v/vue/next.svg" alt="npm" /></p>
+          <p>
+            每个版本的详细发布说明都可以在
+            上找到。
+          </p>
+          <h2 id="vue-devtools"><a href="#vue-devtools" class="header-anchor">#</a> Vue Devtools</h2>
+          <blockquote>
+            <p>目前处于测试阶段 - Vuex 和 Router 的集成仍在进行中。</p>
+          </blockquote>
+          <section class="video-lesson"><a
+              href="https://vueschool.io/lessons/using-vue-dev-tools-with-vuejs-3?friend=vuejs" target="_blank"
+              rel="sponsored noopener" title="在 Vue School 学习如何安装">通过 Vue School 的免费课程学习如何安装和使用 Vue Devtools</a>
+          </section>
+          <p>
+            在使用 Vue 时，我们推荐在你的浏览器上安装
+            它允许你在一个更友好的界面中审查和调试 Vue 应用。
+          </p>
+          <p>
+            <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg"
+              target="_blank" rel="noopener noreferrer">获取 Chrome 扩展程序<svg xmlns="http://www.w3.org/2000/svg"
+                aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100"
+                width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+          </p>
+          <p>
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/" target="_blank"
+              rel="noopener noreferrer">获取 Firefox 附加组件<svg xmlns="http://www.w3.org/2000/svg"
+                aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100"
+                width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+          </p>
+          <p>
+            <a href="https://github.com/vuejs/vue-devtools/blob/dev/packages/shell-electron/README.md" target="_blank"
+              rel="noopener noreferrer">获取独立的 Electron 应用程序<svg xmlns="http://www.w3.org/2000/svg"
+                aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100"
+                width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+          </p>
+          <h2 id="cdn"><a href="#cdn" class="header-anchor">#</a> CDN</h2>
+          <p>对于制作原型或学习，你可以这样使用最新版本：</p>
+          <div class="language-html line-numbers-mode">
+            <pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/vue@next<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  </code></pre>
+
+          </div>
+          <p>对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏。</p>
+          <h2 id="下载并自托管"><a href="#下载并自托管" class="header-anchor">#</a> 下载并自托管</h2>
+          <p>如果你想避免使用构建工具，但又无法在生产环境使用 CDN，那么你可以下载相关 <code>.js</code> 文件并自行托管在你的服务器上。然后你可以通过 <code>&lt;script&gt;</code>
+            标签引入，与使用 CDN 的方法类似。</p>
+          <p>
+            这些文件可以在
+            <a href="https://unpkg.com/browse/vue@next/dist/" target="_blank" rel="noopener noreferrer">unpkg<svg
+                xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+            或者
+            <a href="https://cdn.jsdelivr.net/npm/vue@next/dist/" target="_blank" rel="noopener noreferrer">jsDelivr<svg
+                xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+            这些 CDN 上浏览和下载。各种不同文件将在<a
+              href="#%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%9E%84%E5%BB%BA%E7%89%88%E6%9C%AC%E7%9A%84%E8%A7%A3%E9%87%8A">以后解释</a>，但你通常需要同时下载开发环境构建版本以及生产环境构建版本。
+          </p>
+          <h2 id="npm"><a href="#npm" class="header-anchor">#</a> npm</h2>
+          <p>
+            在用 Vue 构建大型应用时推荐使用 npm 安装<sup><a href="#footnote-1">[1]</a></sup> 。npm 能很好地和诸如
+            <a href="https://webpack.js.org/" target="_blank" rel="noopener noreferrer">webpack<svg
+                xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+            或
+            <a href="https://rollupjs.org/" target="_blank" rel="noopener noreferrer">Rollup<svg
+                xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false"
+                x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                <title id="outbound-link-title">(opens new window)</title>
+            </a>
+            模块打包器配合使用。
+          </p>
+          <div class="language-bash line-numbers-mode">
+            <pre class="language-bash"><code><span class="token comment"># 最新稳定版</span>
+  $ <span class="token function">npm</span> <span class="token function">install</span> vue@next
+  </code></pre>
+
+            <p>Vue 还提供了编写<a href="/guide/single-file-component.html" class="">单文件组件</a>的配套工具。如果你想使用单文件组件，那么你还需要安装
+              <code>@vue/compiler-sfc</code>：
+            </p>
+            <div class="language-bash line-numbers-mode">
+              <pre class="language-bash"><code>$ <span class="token function">npm</span> <span class="token function">install</span> -D @vue/compiler-sfc
+  </code></pre>
+              <div class="line-numbers-wrapper"><br /></div>
+            </div>
+            <p>如果你是从 Vue 2 过渡而来的，请注意 <code>@vue/compiler-sfc</code> 替换掉了 <code>vue-template-compiler</code></p>
+            <p>除了 <code>@vue/compiler-sfc</code> 之外，你还需要为已选择的打包工具选择一个配套的单文件组件 loader 或 plugin。更多信息请查阅<a
+                href="/guide/single-file-component.html" class="">单文件组件文档</a>。</p>
+            <p>大多数情况下，我们更倾向于使用 Vue CLI 来创建一个配置最小化的 webpack 构建版本。</p>
+            <h2 id="命令行工具-cli"><a href="#命令行工具-cli" class="header-anchor">#</a> 命令行工具 (CLI)</h2>
+            <p>
+              Vue 提供了一个<a href="https://cli.vuejs.org/zh/" target="_blank" rel="noopener noreferrer">官方的 CLI<svg
+                  xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false"
+                  x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                  <title id="outbound-link-title">(opens new window)</title>
+              </a>，为单页面应用 (SPA) 快速搭建繁杂的脚手架。它为现代前端工作流提供了功能齐备的构建设置。只需要几分钟的时间就可以运行起来并带有热重载、保存时 lint
+              校验，以及生产环境可用的构建版本。更多详情可查阅
+              <a href="https://cli.vuejs.org/zh/" target="_blank" rel="noopener noreferrer">Vue CLI 的文档<svg
+                  xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false"
+                  x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                  <title id="outbound-link-title">(opens new window)</title>
+              </a>。
+            </p>
+            <div class="custom-block tip">
+              <p class="custom-block-title">TIP</p>
+              <p>CLI 工具假定用户对 Node.js 和相关构建工具有一定程度的了解。如果你是新手，我们强烈建议先在不用构建工具的情况下通读<a href="/guide/introduction.html"
+                  class="">指南</a>，在熟悉 Vue 本身之后再使用 CLI。</p>
+            </div>
+            <p>对于 Vue 3，你应该使用 <code>npm</code> 上可用的 Vue CLI v4.5 作为 <code>@vue/cli</code>。要升级，你应该需要全局重新安装最新版本的
+              <code>@vue/cli</code>：
+            </p>
+            <div class="language-bash line-numbers-mode">
+              <pre class="language-bash"><code><span class="token function">yarn</span> global <span class="token function">add</span> @vue/cli
+  <span class="token comment"># 或</span>
+  <span class="token function">npm</span> <span class="token function">install</span> -g @vue/cli
+  </code></pre>
+
+              <p>然后在 Vue 项目中运行：</p>
+              <div class="language-bash line-numbers-mode">
+                <pre class="language-bash"><code>vue upgrade --next
+  </code></pre>
+                <div class="line-numbers-wrapper"><br /></div>
+              </div>
+              <h2 id="vite"><a href="#vite" class="header-anchor">#</a> Vite</h2>
+              <p>
+                <a href="https://cn.vitejs.dev/" target="_blank" rel="noopener noreferrer">Vite<svg
+                    xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img"
+                    focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                    class="icon outbound">
+                    <title id="outbound-link-title">(opens new window)</title>
+                </a>
+                是一个 web 开发构建工具，由于其原生 ES 模块导入方式，可以实现闪电般的冷服务器启动。
+              </p>
+              <p>通过在终端中运行以下命令，可以使用 Vite 快速构建 Vue 项目。</p>
+              <p>使用 npm：</p>
+              <div class="language-bash line-numbers-mode">
+                <pre class="language-bash"><code><span class="token comment"># npm 6.x</span>
+  $ <span class="token function">npm</span> init vite@latest <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span> --template vue
+  
+  <span class="token comment"># npm 7+，需要加上额外的双短横线</span>
+  $ <span class="token function">npm</span> init vite@latest <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span> -- --template vue
+  
+  $ <span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span>
+  $ <span class="token function">npm</span> <span class="token function">install</span>
+  $ <span class="token function">npm</span> run dev
+  </code></pre>
+
+              </div>
+              <p>或者 yarn：</p>
+              <div class="language-bash line-numbers-mode">
+                <pre class="language-bash"><code>$ <span class="token function">yarn</span> create vite <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span> --template vue
+  $ <span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span>
+  $ <span class="token function">yarn</span>
+  $ <span class="token function">yarn</span> dev
+  </code></pre>
+
+                <p>或者 pnpm:</p>
+                <div class="language-bash line-numbers-mode">
+                  <pre class="language-bash"><code>$ <span class="token function">pnpm</span> create vite <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span> -- --template vue
+  $ <span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span>
+  $ <span class="token function">pnpm</span> <span class="token function">install</span>
+  $ <span class="token function">pnpm</span> dev
+  </code></pre>
+
+                  <h2 id="对不同构建版本的解释"><a href="#对不同构建版本的解释" class="header-anchor">#</a> 对不同构建版本的解释</h2>
+                  <p>
+                    在
+                    <a href="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/" target="_blank" rel="noopener noreferrer">npm
+                      包的
+                      dist/ 目录<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img"
+                        focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                        class="icon outbound">
+                        <title id="outbound-link-title">(opens new window)</title>
+                    </a>你将会找到很多不同的 Vue.js 构建版本。下面是一个概述，根据不同的使用情况，应该使用哪个 <code>dist</code> 文件：
+                  </p>
+                  <h3 id="使用-cdn-或没有构建工具"><a href="#使用-cdn-或没有构建工具" class="header-anchor">#</a> 使用 CDN 或没有构建工具</h3>
+                  <h4 id="vue-runtime-global-prod-js"><a href="#vue-runtime-global-prod-js" class="header-anchor">#</a>
+                    <code>vue(.runtime).global(.prod).js</code>：
+                  </h4>
+                  <ul>
+                    <li>若要通过浏览器中的 <code>&lt;script src="..."&gt;</code> 直接使用，则暴露 Vue 全局。</li>
+                    <li>
+                      浏览器内模板编译：
+                      <ul>
+                        <li><code>vue.global.js</code> 是包含编译器和运行时的“完整”构建版本，因此它支持动态编译模板。</li>
+                        <li><code>vue.runtime.global.js</code> 只包含运行时，并且需要在构建步骤期间预编译模板。</li>
+                      </ul>
+                    </li>
+                    <li>内联所有 Vue 核心内部包——即：它是一个单独的文件，不依赖于其他文件。这意味着你必须导入此文件和此文件中的所有内容，以确保获得相同的代码实例。</li>
+                    <li>包含硬编码的 prod/dev 分支，并且 prod 构建版本是预先压缩过的。将 <code>*.prod.js</code> 文件用于生产环境。</li>
+                  </ul>
+                  <div class="custom-block tip">
+                    <p class="custom-block-title">提示</p>
+                    <p>
+                      全局打包不是
+                      <a href="https://github.com/umdjs/umd" target="_blank" rel="noopener noreferrer">UMD<svg
+                          xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img"
+                          focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                          class="icon outbound">
+                          <title id="outbound-link-title">(opens new window)</title>
+                      </a>
+                      构建的，它们被打包成
+                      <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE" target="_blank"
+                        rel="noopener noreferrer">IIFEs<svg xmlns="http://www.w3.org/2000/svg"
+                          aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px"
+                          viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                          <title id="outbound-link-title">(opens new window)</title>
+                          <path fill="currentColor"
+                            d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                          </path>
+                          <polygon fill="currentColor"
+                            points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                          </polygon>
+                        </svg></a>，并且仅用于通过 <code>&lt;script src="..."&gt;</code> 直接使用。
+                    </p>
+                  </div>
+                  <h4 id="vue-runtime-esm-browser-prod-js"><a href="#vue-runtime-esm-browser-prod-js"
+                      class="header-anchor">#</a> <code>vue(.runtime).esm-browser(.prod).js</code>：</h4>
+                  <ul>
+                    <li>用于通过原生 ES 模块导入使用 (在浏览器中通过 <code>&lt;script type="module"&gt;</code> 来使用)。</li>
+                    <li>与全局构建版本共享相同的运行时编译、依赖内联和硬编码的 prod/dev 行为。</li>
+                  </ul>
+                  <h3 id="使用构建工具"><a href="#使用构建工具" class="header-anchor">#</a> 使用构建工具</h3>
+                  <h4 id="vue-runtime-esm-bundler-js"><a href="#vue-runtime-esm-bundler-js" class="header-anchor">#</a>
+                    <code>vue(.runtime).esm-bundler.js</code>：
+                  </h4>
+                  <ul>
+                    <li>用于 <code>webpack</code>，<code>rollup</code> 和 <code>parcel</code> 等构建工具。</li>
+                    <li>留下 prod/dev 分支的 <code>process.env.NODE_ENV</code> 守卫语句 (必须由构建工具替换)。</li>
+                    <li>不提供压缩版本 (打包后与其余代码一起压缩)。</li>
+                    <li>
+                      import 依赖 (例如：<code>@vue/runtime-core</code>，<code>@vue/runtime-compiler</code>)
+                      <ul>
+                        <li>导入的依赖项也是 esm bundler 构建版本，并将依次导入其依赖项 (例如：@vue/runtime-core imports @vue/reactivity)。</li>
+                        <li>这意味着你<strong>可以</strong>单独安装/导入这些依赖，而不会导致这些依赖项的不同实例，但你必须确保它们都为同一版本。</li>
+                      </ul>
+                    </li>
+                    <li>
+                      浏览器内模板编译：
+                      <ul>
+                        <li><code>vue.runtime.esm-bundler.js</code> <strong>(默认)</strong> 仅运行时，并要求所有模板都要预先编译。这是构建工具的默认入口
+                          (通过
+                          <code>package.json</code> 中的 module 字段)，因为在使用构建工具时，模板通常是预先编译的 (例如：在 <code>*.vue</code> 文件中)。
+                        </li>
+                        <li><code>vue.esm-bundler.js</code> 包含运行时编译器。如果你使用了一个构建工具，但仍然想要运行时的模板编译 (例如，DOM 内 模板或通过内联
+                          JavaScript
+                          字符串的模板)，请使用这个文件。你需要配置你的构建工具，将 vue 设置为这个文件。</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <h3 id="对于服务端渲染"><a href="#对于服务端渲染" class="header-anchor">#</a> 对于服务端渲染</h3>
+                  <h4 id="vue-cjs-prod-js"><a href="#vue-cjs-prod-js" class="header-anchor">#</a>
+                    <code>vue.cjs(.prod).js</code>：
+                  </h4>
+                  <ul>
+                    <li>通过 <code>require()</code> 在 Node.js 服务器端渲染使用。</li>
+                    <li>如果你将应用程序与带有 <code>target: 'node'</code> 的 webpack 打包在一起，并正确地将 <code>vue</code> 外部化，则将加载此文件。</li>
+                    <li>dev/prod 文件是预构建的，但是会根据 <code>process.env.NODE_ENV</code> 自动加载相应的文件。</li>
+                  </ul>
+                  <h2 id="运行时-编译器-vs-仅运行时"><a href="#运行时-编译器-vs-仅运行时" class="header-anchor">#</a> 运行时 + 编译器 vs. 仅运行时
+                  </h2>
+                  <p>如果需要在客户端上编译模板 (即：将字符串传递给 template 选项，或者使用元素的 DOM 内 HTML 作为模板挂载到元素)，你将需要编译器，因此需要完整的构建版本：</p>
+                  <div class="language-js line-numbers-mode">
+                    <pre class="language-js"><code><span class="token comment">// 需要编译器</span>
+  Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'<span class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token interpolation"><span class="token punctuation">{{</span><span class="token inline-js language-js"> hi </span><span class="token punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></span>'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">// 不需要</span>
+  Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Vue<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>hi<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  </code></pre>
+                    <div class="line-numbers-wrapper">
+
+                    </div>
+                  </div>
+                  <p>当使用 <code>vue-loader</code> 时，<code>*.vue</code> 文件中的模板会在构建时预编译为
+                    JavaScript，在最终的捆绑包中并不需要编译器，因此可以只使用运行时构建版本。
+                  </p>
+                  <p>
+                    <small><strong>译者注</strong><br />
+                      <a id="footnote-1"></a>[1] 对于中国大陆用户，建议将 NPM 源设置为<a href="https://npmmirror.com/" target="_blank"
+                        rel="noopener noreferrer">国内的镜像<svg xmlns="http://www.w3.org/2000/svg"
+                          aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px"
+                          viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                          <title id="outbound-link-title">(opens new window)</title>
+                      </a>，可以大幅提升安装速度。</small>
+                  </p>
+                </div>
+                <footer class="page-edit" data-v-007274aa="">
+                  <div class="container" data-v-007274aa="">
+                    <p data-v-007274aa="">
+                      <span class="edit-link" data-v-007274aa="">
+                        发现了错误或者想要为文档做贡献？
+                        <a href="https://github.com/vuejs/docs-next-zh-cn/edit/master/src/guide/installation.md"
+                          target="_blank" rel="noopener noreferrer" data-v-007274aa="">
+                          在 GitHub 上编辑此页
+                          <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img"
+                            focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"
+                            class="icon outbound" data-v-007274aa="">
+                            <title id="outbound-link-title">(opens new window)</title>
+                        </a></span>
+                      <br data-v-007274aa="" />
+                      <span class="prefix" data-v-007274aa="">最近更新时间:</span> <span class="time"
+                        data-v-007274aa="">2021-12-24,
+                        07:18:03 UTC</span>
+                    </p>
+                  </div>
+                </footer>
+                <div class="page-nav">
+                  <p class="inner">
+                    <!---->
+                    <span class="next"><a href="/guide/introduction.html" class="">介绍</a>
+                      →
+                    </span>
+                  </p>
+                </div>
+                <div class="bsa-cpc-wrapper">
+                  <div class="bsa-cpc"></div>
+                </div>
+      </main>
+    </div>
+
+  </div>
+</body>
+
+</html>

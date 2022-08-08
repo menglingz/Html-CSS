@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 800px;
+        margin: 50px auto;
+        /* background-color: #ccc; */
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      nav {
+        width: calc(100% - 15px);
+        height: 30px;
+      }
+      nav a {
+        line-height: 30px;
+      }
+      nav > a:nth-child(1) {
+        float: left;
+      }
+      nav > a:nth-child(3) {
+        float: right;
+        display: none;
+      }
+      nav ul {
+        display: flex;
+        float: right;
+      }
+      nav ul li {
+        margin-right: 5px;
+      }
+      main {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      main img {
+        width: 24%;
+      }
+      @media screen and (max-width: 1024px) and (min-width: 500px) {
+        .box {
+          width: 100vw;
+        }
+        nav ul {
+          display: none;
+        }
+        nav > a:nth-child(3) {
+          display: block;
+        }
+        main img {
+          width: 49%;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .box {
+          width: 480px;
+        }
+        main img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <nav>
+        <a href="javascript:;">LOGO</a>
+        <ul>
+          <li><a href="javascript:;">电视剧</a></li>
+          <li><a href="javascript:;">动漫</a></li>
+          <li style="margin-right: 0px"><a href="javascript:;">电影</a></li>
+        </ul>
+        <a href="javascript:;">菜单</a>
+      </nav>
+      <main>
+        <img src="../img/img_2.jpeg" alt="" />
+        <img src="../img/img_1.jpeg" alt="" />
+        <img src="../img/img_3.jpeg" alt="" />
+        <img src="../img/img_4.jpeg" alt="" />
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;height: 400px;
+            border: 1px solid black;
+            position: relative;
+            /* 使元素变成一个3D空间 */
+            transform-style: preserve-3d;
+            transform: rotateY(30deg) rotateX(30deg);
+        }
+        .box div{
+            width: 100px;height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+
+        }
+        .box .a1{
+            background-color: rgba(0, 34, 255, 0.514);
+            transform: translateX(-50px) rotateY(-90deg);
+        }
+        .box .a2{
+            background-color: rgba(255, 217, 0, 0.537);
+            transform: translateZ(50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="a1">1</div>
+        <div class="a2">2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            /* background-color: antiquewhite; */
+        }
+        .wrap>div{
+            width: 300px;
+            height: 300px;
+            /* border: 1px solid; */
+            position: absolute;
+        }
+        .wrap div div{
+            width: 40px;
+            height: 40px;
+            background-color: tomato;
+            border-radius: 50%;
+            position: absolute;
+            animation: run 1.6s linear infinite;
+        }
+        @keyframes run{
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(2);
+            }
+            100%{
+                transform: scale(0);
+            }
+        }
+        .wrap>div:nth-child(2){
+            transform: rotate(45deg);
+        }
+        .wrap div div:nth-child(1){
+            top: 0;left: 0;
+        }
+        .wrap div div:nth-child(2){
+            top: 0;right: 0;
+        }
+        .wrap div div:nth-child(3){
+            bottom: 0;right: 0;
+        }
+        .wrap div div:nth-child(4){
+            left: 0;bottom: 0;
+        }
+
+        .wrap .box1 div:nth-child(1){
+            animation-delay: 0s;
+        }
+        .wrap .box2 div:nth-child(1){
+            animation-delay: -.2s;
+        }
+        .wrap .box1 div:nth-child(2){
+            animation-delay: -.4s;
+        }
+        .wrap .box2 div:nth-child(2){
+            animation-delay: -.6s;
+        }
+        .wrap .box1 div:nth-child(3){
+            animation-delay: -.8s;
+        }
+        .wrap .box2 div:nth-child(3){
+            animation-delay: -1.0s;
+        }
+        .wrap .box1 div:nth-child(4){
+            animation-delay: -1.2s;
+        }
+        .wrap .box2 div:nth-child(4){
+            animation-delay: -1.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1">
+            <div>1</div>
+            <div>3</div>
+            <div>5</div>
+            <div>7</div>
+        </div>
+        <div class="box2">
+            <div>2</div>
+            <div>4</div>
+            <div>6</div>
+            <div>8</div>            
+        </div>
+    </div>
+</body>
+</html>

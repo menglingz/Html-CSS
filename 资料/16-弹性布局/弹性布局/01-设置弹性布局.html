@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 500px;
+            background-color: aquamarine;
+            margin: 50px auto;
+            /* 将box设置为弹性布局 
+                此时，.box就会被称为弹性容器
+                它内部的亲子元素就会变成弹性项目
+            */
+            display: flex;
+            /* 弹性容器中默认的排列方式是横向 */
+            /* 容器的属性 */
+            /* flex-direction: row; */
+            /*默认取值，设定主轴方向从左到右*/
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* 设定主轴方向为从上到下 */
+            /* flex-direction: column-reverse; */
+            /* 设定主轴方向为从下到上 */
+            /* 设定主轴上的项目是否能折行（前提是需要折行） */
+
+            /* flex-wrap: wrap; */
+            /* 反向这行 */
+            /* flex-wrap: wrap-reverse; */
+            /* 以上两个属性的复合写法：取值中间用空格隔开 */
+            /* flex-flow: row wrap; */
+            /* 设定项目在主轴上的对齐方式 */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            justify-content: space-evenly;
+            /* 设定项目在交叉轴上的对齐方式 */
+            align-items: center;
+            /* align-items: flex-end; */
+            /* align-items: stretch; */
+            /* 如果项目没有设置高度，或者高度设置为自动
+                则会占满整个容器的高度
+            */
+
+        }
+        .box div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            /* 项目属性： */
+            /* 设定某个单个项目于其他项目不一样的对齐方式 */
+            align-self: start;
+            /* 设定项目的排列顺序 默认为0，取值越小越靠前，可以取负数*/
+            /* order: 0; */
+            /* flex-shrink: 1; */
+
+        }
+        .box div:nth-child(3){
+            /* align-self: flex-end; */
+            /* 项目属性： */
+            /* 设定某个单个项目于其他项目不一样的对齐方式 */
+            /* 设定项目的排列顺序 */
+            /* order: -1; */
+            /* 分配剩余空间，默认取值为0，取值为几分配到总份数的几份 */
+            /* flex-grow: 3; */
+            /* flex-shrink: 0; */
+            /* 设定项目在主轴上占据的空间 */
+            /* flex-basis: 200px; */
+            /* 以上三个子属性的复合写法 */
+            flex: 1;
+            /* 1 1 0% */
+            
+
+        }
+        .box div:nth-child(2){
+            /* flex-grow: 1; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    ul {
+      width: 650px;
+      height: 100px;
+      margin: 100px auto;
+    }
+
+    ul>li {
+      width: 100px;
+      height: 100%;
+      float: left;
+    }
+
+    ul>li.cur {
+      width: 50px;
+      height: 100%;
+    }
+
+    ul>li:nth-child(1) {
+      background-color: #00f0ff;
+    }
+
+    ul>li:nth-child(2) {
+      border: 50px solid;
+      width: 0px;
+      height: 0px;
+      border-color: red red red #00f0ff;
+    }
+
+    ul>li:nth-child(3) {
+      border: 50px solid;
+      width: 0px;
+      height: 0px;
+      border-color: yellow yellow yellow red;
+    }
+
+    ul>li:nth-child(4) {
+      border: 50px solid;
+      width: 0px;
+      height: 0px;
+      border-color: blue blue blue yellow;
+    }
+
+    ul>li:nth-child(5) {
+      border: 50px solid;
+      width: 0px;
+      height: 0px;
+      border-color: #00ff23 #00ff23 #00ff23 blue;
+    }
+
+    ul>li:nth-child(6) {
+      border: 50px solid;
+      width: 0px;
+      height: 0px;
+      border-color: #ff00fc #ff00fc #ff00fc #00ff23;
+    }
+
+    ul>li:nth-child(7) {
+      border: 50px solid;
+      width: 0px;
+      height: 0px;
+      border-color: transparent transparent transparent #ff00fc;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="cur"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+
+</html>

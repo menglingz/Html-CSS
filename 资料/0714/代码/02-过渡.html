@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            width: 200px;
+            /* height: 400px; */
+            list-style: none;
+            background-color: blanchedalmond;
+        }
+        ul li {
+            background-color: aqua;
+            line-height: 30px;
+            width: 200px;
+            /* 过渡不支持display */
+            /* display: none; */
+            transition:all 2s ;
+        }
+        ul:hover li{
+            width: 150px;
+            background-color: brown;
+            /* display: block; */
+
+
+        }
+        .box div{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+        }
+        .box div:nth-child(1){
+            transition: all 3s ease 0s;
+        }
+        .box div:nth-child(2){
+            transition: all 3s ease-in-out 0s;
+        }
+        .box div:nth-child(3){
+            transition: all 3s ease-out 0s;
+        }
+        .box div:nth-child(4){
+            transition: all 3s ease-in 0s;
+        }
+        .box div:nth-child(5){
+            transition: all 3s linear 0s;
+        }
+        .box:hover div{
+            width: 400px;
+        }
+    </style>
+</head>
+
+    <body>
+        <ul>
+            <li>首页</li>
+            <li>男子专区</li>
+            <li>女子专区</li>
+        </ul>
+        <div class="box">
+            <div>ease</div>
+            <div>ease-in-out</div>
+            <div>ease-out</div>
+            <div>ease-in</div>
+            <div>linear</div>
+            <!-- 运动时间曲线，贝塞尔曲线 -->
+            <!-- https://cubic-bezier.com/#.1,.92,1,.14 -->
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: red;/* 浏览器不支持渐变则会退回方案 */
+            background-image: -webkit-linear-gradient();
+            /* Chrome Safari iOS Android4.3 */
+            background-image: -moz-linear-gradient();
+            /* FireFox 3.6-15 */
+            background-image: -o-linear-gradient();
+            /* Opera(11-12.0) */
+            /* 百度，360，QQ浏览器。。。什么浏览器内核？？ */
+            /* 一般写兼容就要把全部兼容都写上 */
+            animation: aa 2s linear;
+            -webkit-animation: aa 2s linear;
+            -o-animation: aa 2s linear;
+            -moz-animation: aa 2s linear;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

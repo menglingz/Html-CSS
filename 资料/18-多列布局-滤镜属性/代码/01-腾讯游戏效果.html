@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            /* 避免因为横向超过窗口边缘的移动导致出现横向滚动条 */
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: purple;
+
+        }
+
+        .m-icon {
+            z-index: 1;
+            position: absolute;
+            top: 35px;
+            right: 110px;
+            height: 28px;
+            width: 30px;
+            /* background-color: antiquewhite; */
+            /* 设置光标经过元素时的图形 */
+            /* 小手 */
+            cursor: pointer;
+            /* 箭头 */
+            /* cursor: default; */
+            /* 十字 */
+            /* cursor: crosshair; */
+            /* 拖动 */
+            /* cursor:move; */
+            /* 箭头加一个? */
+            /* cursor:help; */
+            /* ... */
+        }
+
+        .m-icon i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 4px;
+            border-radius: 2px;
+            transition: all .3s ease-in-out;
+        }
+
+        .m-icon i:first-child {
+            background-color: white;
+
+        }
+
+        .m-icon i:nth-child(2) {
+            top: 12px;
+            background-color: rgba(255, 255, 255, 0.6);
+
+        }
+
+        .m-icon i:nth-child(3) {
+            top: 24px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* .m-icon:hover i:nth-child(3) {
+            width: 20px;
+        } */
+
+        .n-box {
+            position: absolute;
+            right: 145px;
+            top: 10px;
+            height: 80px;
+            width: 1000px;
+        }
+
+        .n-box .n-nav {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 450px;
+            transition: all .4s ease-in-out;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .n-nav a {
+            text-decoration: none;
+            color: white;
+            line-height: 80px;
+            display: inline-block;
+            margin: 0 25px;
+
+        }
+
+
+        .m-icon:active+.n-box .n-nav {
+            transform: translateX(-200px);
+            opacity: 1;
+        }
+
+        .m-icon:active i:nth-child(1) {
+            transform: translateY(12px) rotate(45deg);
+        }
+
+        .m-icon:active i:nth-child(2) {
+            transform: rotate(-45deg)
+        }
+
+        .m-icon:active i:nth-child(3) {
+            opacity: 0;
+        }
+
+        /* .enter1 {
+            width: 40px;
+        }
+
+        .enter2 {
+            width: 20px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="m-icon" tabindex="1">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+    <div class="n-box">
+        <div class="n-nav">
+            <a href="">关于腾讯游戏</a>
+            <a href="">游戏介绍</a>
+            <a href="">品牌活动</a>
+        </div>
+    </div>
+
+    <!-- <script>
+        const is = document.querySelectorAll(".m-icon i")
+        const icon = document.querySelector('.m-icon')
+        const nav = document.querySelector('.n-nav')
+        console.log(is);
+        icon.addEventListener('mouseenter', function () {
+            is[1].className = 'enter1'
+            is[2].className = 'enter2'
+        })
+        icon.addEventListener('click', function () {
+            nav.style.transform = 'translateX(-200px)'
+            nav.style.opacity = '1'
+        })
+    </script> -->
+</body>
+
+</html>

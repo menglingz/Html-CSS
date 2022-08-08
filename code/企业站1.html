@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .head {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: space-between;
+      }
+      header {
+        width: 800px;
+        height: 50px;
+        background-color: #303030;
+        position: relative;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+      }
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      header:hover .nav-head {
+        display: block;
+      }
+      .nav-head {
+        width: 400px;
+        height: 30px;
+        background-color: #5f5f5f;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        display: none;
+      }
+      .banner {
+        width: 100%;
+        height: 300px;
+        background-color: #3092ed;
+        margin-bottom: 50px;
+        color: #fff;
+        text-align: center;
+        line-height: 300px;
+      }
+      main {
+        width: 100%;
+        height: 150px;
+        /* background-color: red; */
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+      }
+      main div {
+        background-color: #5f5f5f;
+        margin-right: 40px;
+        flex: 1;
+        color: #fff;
+        text-align: center;
+        line-height: 150px;
+      }
+      main div:nth-child(3) {
+        margin-right: 0px;
+      }
+      footer {
+        flex: 1;
+        background-color: #8f8f8f;
+        color: #fff;
+        text-align: center;
+        line-height: 41px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <div class="logo">logo</div>
+        <header>
+          导航
+          <div class="nav-head">二级导航</div>
+        </header>
+      </div>
+      <div class="banner">banner</div>
+      <main>
+        <div>内容1</div>
+        <div>内容2</div>
+        <div>内容3</div>
+      </main>
+      <footer>页脚</footer>
+    </div>
+  </body>
+</html>

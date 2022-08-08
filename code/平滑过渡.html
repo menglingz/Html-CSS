@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .st-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+      }
+
+      .st-container > input,
+      .st-container > a {
+        display: block;
+        width: 20%;
+        height: 34px;
+        line-height: 34px;
+        position: fixed;
+        bottom: 0px;
+      }
+
+      /* 单独这是input */
+      .st-container > input {
+        z-index: 1000;
+        /* 透明度 取值范围是 0 - 1 */
+        opacity: 0;
+      }
+
+      .st-container > a {
+        z-index: 10;
+        font-weight: 700;
+        background-color: #e23a6e;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+        /* 文本阴影
+            水平方向的移动位移
+            垂直方向的移动位移
+            模糊度
+            模糊颜色
+            */
+        text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
+      }
+
+      /* 使用id实现样式 需要加#
+        +:兄弟选择器，选择的是紧紧挨着的兄弟元素 
+        ~:兄弟选择器，选择的后面的所有的兄弟元素
+        */
+      #st-control-1,
+      #st-control-1 + a {
+        left: 0;
+      }
+
+      #st-control-2,
+      #st-control-2 + a {
+        left: 20%;
+      }
+
+      #st-control-3,
+      #st-control-3 + a {
+        left: 40%;
+      }
+
+      #st-control-4,
+      #st-control-4 + a {
+        left: 60%;
+      }
+
+      #st-control-5,
+      #st-control-5 + a {
+        left: 80%;
+      }
+
+      /* 默认样式 */
+      .st-container input:checked + a {
+        background: #821134;
+      }
+
+      /* 导航的三角样式 
+        after before 
+        */
+
+      .st-container input:checked + a::after {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        border: 20px solid transparent;
+        border-bottom-color: #821134;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* 页面样式
+        st-scroll:是包裹五个页面的大容器 
+        st-panel:是展示每一个页面，一共是五个页面
+        */
+      .st-scroll,
+      .st-panel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .st-scroll {
+        left: 0px;
+        top: 0px;
+        /* 三个轴全部为0，是为了确定位置 */
+        transform: translate3d(0, 0, 0);
+        /* 每个页面的过渡动画 */
+        transition: all 0.6s ease-in;
+        backface-visibility: hidden;
+      }
+
+      .st-panel {
+        background-color: #fff;
+        /* 内容超出当前页面，不设置溢出隐藏，会有滚动条 */
+        overflow: hidden;
+      }
+
+      /* 
+        实现页面跳转 
+        使用锚点进行id的匹配 
+        如果点击了超链接，input会有checked属性 
+        找到这个有checked属性的input框的兄弟元素超链接 实现锚点的跳转
+        */
+      /* 第一个页面 */
+      #st-control-1:checked ~ .st-scroll {
+        transform: translateY(0%);
+      }
+
+      #st-control-2:checked ~ .st-scroll {
+        transform: translateY(-100%);
+      }
+
+      #st-control-3:checked ~ .st-scroll {
+        transform: translateY(-200%);
+      }
+
+      #st-control-4:checked ~ .st-scroll {
+        transform: translateY(-300%);
+      }
+
+      #st-control-5:checked ~ .st-scroll {
+        transform: translateY(-400%);
+      }
+
+      /* 三角形样式 */
+      .st-desc {
+        width: 200px;
+        height: 200px;
+        background-color: #e23a6e;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        margin-left: -100px;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      /* 字体实现
+        找到有data-icon属性的元素，添加一个伪类  after
+        使用content中的attr方法，把data-icon添加到元素div中
+        */
+      [data-icon]::after {
+        content: attr(data-icon);
+        width: 200px;
+        height: 200px;
+        color: #fff;
+        font-size: 90px;
+        text-align: center;
+        line-height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -100px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: -100px;
+        transform: rotate(-45deg) translateY(25%);
+      }
+
+      /* 标题和段落样式 */
+      .st-panel h2 {
+        color: #e23a6e;
+        font-size: 54px;
+        line-height: 54px;
+        text-align: center;
+        font-weight: 900;
+        width: 80%;
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        margin-top: -70px;
+        text-shadow: 1px 1px 1px red;
+      }
+
+      #st-control-1:checked ~ .st-scroll #st-panel-1 h2,
+      #st-control-2:checked ~ .st-scroll #st-panel-2 h2,
+      #st-control-3:checked ~ .st-scroll #st-panel-3 h2,
+      #st-control-4:checked ~ .st-scroll #st-panel-4 h2,
+      #st-control-5:checked ~ .st-scroll #st-panel-5 h2 {
+        animation: moveDown 0.6s linear 0.2s backwards;
+      }
+
+      @keyframes moveDown {
+        0% {
+          transform: translateY(-40px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+
+      .st-panel p {
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        left: 25%;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 0px;
+        text-align: center;
+        color: #821134;
+      }
+
+      #st-control-1:checked ~ .st-scroll #st-panel-1 p,
+      #st-control-2:checked ~ .st-scroll #st-panel-2 p,
+      #st-control-3:checked ~ .st-scroll #st-panel-3 p,
+      #st-control-4:checked ~ .st-scroll #st-panel-4 p,
+      #st-control-5:checked ~ .st-scroll #st-panel-5 p {
+        animation: moveUp 0.6s linear 0.2s backwards;
+      }
+
+      @keyframes moveUp {
+        0% {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+
+      .st-color {
+        background-color: #fa96b5;
+      }
+
+      .st-color .st-desc {
+        background-color: #fff;
+      }
+
+      .st-color [data-icon]::after {
+        color: #fa96b5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- 承载所有的页面 -->
+      <div class="st-container">
+        <!-- nav begin -->
+        <input type="radio" name="radio-set" checked id="st-control-1" />
+        <a href="#st-panel-1">Serendipity</a>
+
+        <input type="radio" name="radio-set" id="st-control-2" />
+        <a href="#st-panel-2">Happiness</a>
+
+        <input type="radio" name="radio-set" id="st-control-3" />
+        <a href="#st-panel-3">Tranquillity</a>
+
+        <input type="radio" name="radio-set" id="st-control-4" />
+        <a href="#st-panel-4">Positivity</a>
+
+        <input type="radio" name="radio-set" id="st-control-5" />
+        <a href="#st-panel-5">Passion</a>
+        <!-- nav end  -->
+
+        <!-- 内容区域 -->
+        <div class="st-scroll">
+          <!-- 页面 -->
+          <section class="st-panel" id="st-panel-1">
+            <!-- 图标 -->
+            <div class="st-desc" data-icon="H"></div>
+            <h2>Serendipity</h2>
+            <p>
+              I want to go with my net down to Butterfly Corner. There will be 13)heaps of butterflies out this sunny day. And the other boys at school are all collecting: they have more than I have, all of them. I have only a 14)tortoiseshell and a 15)brimstone. O, it’s a 16)regular shame of
+              father!” Roddy said.
+            </p>
+          </section>
+          <section class="st-panel st-color" id="st-panel-2">
+            <!-- 图标 -->
+            <div class="st-desc" data-icon="2"></div>
+            <h2>Happiness</h2>
+            <p>
+              Hush, dear, hush! Nothing that your kind, good father says or does can be called a shame. But I believe I can guess why he gave those orders. He knew that this is an over-busy day for me, and also that I have one of my bad headaches.” Certainly mother’s face 17)gleamed out white from
+              the dairy shadows.
+            </p>
+          </section>
+          <section class="st-panel" id="st-panel-3">
+            <!-- 图标 -->
+            <div class="st-desc" data-icon="B"></div>
+            <h2>Tranquillity</h2>
+            <p>
+              “And as this is market-day at Hamley Town, he and old Michael would be away until dinner-time. So, you see, sonny, he has left you in charge. You are in father’s place this morning to guard the farm and us all, particularly the tinies. Don’t you see what an honor it is to be trusted
+              thus?”
+            </p>
+          </section>
+          <section class="st-panel st-color" id="st-panel-4">
+            <!-- 图标 -->
+            <div class="st-desc" data-icon="X"></div>
+            <h2>Positivity</h2>
+            <p>
+              Something stirred in Roddy’s heart at his mother’s words. The best part of him suddenly came uppermost. He walked quietly away, followed by Fuzzy 18)sniffing at his heels. And, somehow, the boy felt an inch taller as he looked round the farm. After all, what were the butterflies
+              compared with the tinies left in his charge? “19)Hip, hip, hooray!” Roddy straightened himself and cheered. He had won a victory – over himself.
+            </p>
+          </section>
+          <section class="st-panel" id="st-panel-5">
+            <!-- 图标 -->
+            <div class="st-desc" data-icon="C"></div>
+            <h2>Passion</h2>
+            <p>May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably hurts the other person, too.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

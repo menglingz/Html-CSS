@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .header {
+        width: 100%;
+        height: 40px;
+        background-color: #ff2e63;
+      }
+      .aside {
+        float: left;
+        width: 350px;
+        height: calc(100% - 40px);
+        background-color: #252a34;
+      }
+      .aside ul {
+        height: 160px;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      .aside ul li {
+        height: 25%;
+      }
+      .aside ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+      }
+      .aside ul li .first {
+        background-color: #7f8082;
+        color: red;
+      }
+      .aside ul li > #nav_main {
+        width: calc(100vw - 350px);
+        height: calc(100vh - 40px);
+        background-color: #d7efef;
+        position: absolute;
+        top: 0;
+        left: 350px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #nav_main .module {
+        width: 30%;
+        height: 25%;
+        border: 2px solid rgb(125, 156, 125);
+        border-radius: 5px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="aside">
+      <ul>
+        <li>
+          <a href="" class="first">客厅</a>
+          <div id="nav_main">
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+            <div class="module">
+              <img src="../../../img/3.jpeg" alt="" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="">卧室</a>
+          <div></div>
+        </li>
+        <li>
+          <a href="">场景</a>
+          <div></div>
+        </li>
+        <li>
+          <a href="">设置</a>
+          <div></div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(62, 55, 55);
+      }
+      .box {
+        width: 700px;
+        height: 700px;
+        border: 5px solid rgb(236, 224, 224);
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -350px;
+        margin-left: -350px;
+        transform: rotateY(30deg) rotateX(30deg);
+        border-radius: 50%;
+        z-index: 999;
+        animation: run 10s linear infinite;
+      }
+      @keyframes run {
+        0% {
+          transform: rotateY(0deg) rotateX(0deg);
+        }
+        25% {
+          transform: rotateY(90deg) rotateX(90deg);
+        }
+        50% {
+          transform: rotateY(180deg) rotateX(180deg);
+        }
+        75% {
+          transform: rotateY(270deg) rotateX(270deg);
+        }
+        100% {
+          transform: rotateY(360deg) rotateX(360deg);
+        }
+      }
+      .box > div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        line-height: 200px;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        opacity: 0.7;
+        transition: all 0.5s linear;
+      }
+      .box > .box1 {
+        background: rgb(82, 177, 180);
+        transform: translateX(-100px) rotateY(-90deg);
+      }
+      .box > .box2 {
+        background: rgb(234, 112, 236);
+        transform: translateZ(100px);
+      }
+      .box > .box3 {
+        background: purple;
+        transform: translateY(-100px) rotateX(-90deg);
+      }
+      .box > .box4 {
+        background: green;
+        transform: translateY(100px) rotateX(-90deg);
+      }
+      .box > .box5 {
+        background: red;
+        transform: translateZ(-100px);
+      }
+      .box > .box6 {
+        background: darkblue;
+        transform: translateX(100px) rotateY(90deg);
+      }
+      .box:hover > .box1 {
+        background: url(../img/1.jpeg) no-repeat;
+        background-size: cover;
+        transform: translateX(-100px) rotateY(-90deg) translateZ(100px);
+      }
+      .box:hover > .box2 {
+        background: url(../img/2.jpeg) no-repeat;
+        background-size: cover;
+        transform: translateZ(200px);
+      }
+      .box:hover > .box3 {
+        background: url(../img/3.jpeg) no-repeat;
+        background-size: cover;
+        transform: translateY(-100px) rotateX(-90deg) translateZ(-100px);
+      }
+      .box:hover > .box4 {
+        background: url(../img/4.jpeg) no-repeat;
+        background-size: cover;
+        transform: translateY(100px) rotateX(-90deg) translateZ(100px);
+      }
+      .box:hover > .box5 {
+        background: url(../img/5.jpeg) no-repeat;
+        background-size: cover;
+        transform: translateZ(-200px);
+      }
+      .box:hover > .box6 {
+        background: url(../img/1.jpeg) no-repeat;
+        background-size: cover;
+        transform: translateX(100px) rotateY(90deg) translateZ(100px);
+      }
+      .box:hover > div > span {
+        display: none;
+      }
+      .box:hover > div {
+        transition: all 0.5s linear;
+      }
+      .box:hover + .box7 > div > span {
+        display: none;
+      }
+      .box7 {
+        transform-style: preserve-3d;
+        width: 500px;
+        height: 500px;
+        margin-left: -250px;
+        margin-top: -250px;
+        line-height: 500px;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transition: all 0.5s linear;
+        transform: rotateY(30deg) rotateX(30deg);
+        animation: run 10s linear infinite;
+      }
+      .box7 > div {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+        font-size: 25px;
+        opacity: 0.7;
+      }
+      .box7 > div > span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+        font-size: 25px;
+      }
+      .box7 > div:nth-child(1) {
+        background: rgb(82, 177, 180);
+        transform: translateX(-50px) rotateY(-90deg);
+      }
+      .box7 > div:nth-child(2) {
+        background: rgb(234, 112, 236);
+        transform: translateZ(50px);
+      }
+      .box7 > div:nth-child(3) {
+        background: purple;
+        transform: translateY(-50px) rotateX(-90deg);
+      }
+      .box7 > div:nth-child(4) {
+        background: green;
+        transform: translateY(50px) rotateX(-90deg);
+      }
+      .box7 > div:nth-child(5) {
+        background: red;
+        transform: translateZ(-50px);
+      }
+      .box7 > div:nth-child(6) {
+        background: darkblue;
+        transform: translateX(50px) rotateY(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box1">
+        <span>1</span>
+      </div>
+      <div class="box2">
+        <span>2</span>
+      </div>
+      <div class="box3">
+        <span>3</span>
+      </div>
+      <div class="box4">
+        <span>4</span>
+      </div>
+      <div class="box5">
+        <span>5</span>
+      </div>
+      <div class="box6">
+        <span>6</span>
+      </div>
+    </div>
+    <div class="box7">
+      <div><span>1</span></div>
+      <div><span>2</span></div>
+      <div><span>3</span></div>
+      <div><span>4</span></div>
+      <div><span>5</span></div>
+      <div><span>6</span></div>
+    </div>
+  </body>
+</html>

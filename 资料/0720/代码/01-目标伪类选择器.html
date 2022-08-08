@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span:target{
+            color: red;
+            font-size: 50px;
+        }
+        /* 处在被选择的状态时 */
+        input:checked{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 目标伪类选择器
+        描述：当元素被作为目标URL指向时的样式设置
+        使用超链接时依托于id
+    -->
+    <a href="#tf">说：“老虎”</a>
+    <span id="tf">田夫</span>
+    <br>
+    <a href="#syy">说：“狮子”</a>
+    <span id="syy">饲养员</span>
+    <br>
+    <a href="#csg">说：“大象”</a>
+    <span id="csg">铲屎官</span>
+    <br>
+    <input type="radio" name="aa" id="">
+    <input type="radio" name="aa" id="">
+</body>
+</html>

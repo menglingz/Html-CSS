@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul,
+      li,
+      ol {
+        list-style: none;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      .box {
+        width: 100%;
+        background-color: #faefec;
+        margin: 100px auto;
+      }
+      .container {
+        margin: 0 auto;
+        width: 700px;
+        display: flex;
+        align-items: center;
+      }
+      .search {
+        height: 40px;
+        width: 600px;
+        border: 1px solid #f4a460;
+        border-radius: 21px;
+        display: flex;
+        background-color: #ffffff;
+        position: relative;
+      }
+      .left {
+        width: 56px;
+        height: 100%;
+      }
+      select {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        margin-left: 16px;
+        box-sizing: border-box;
+      }
+      select,
+      option {
+        border: none;
+        outline: none;
+      }
+      input {
+        margin-left: 28px;
+        width: 440px;
+        border: none;
+        border-left: 1px solid #dcdcdc;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        padding-left: 10px;
+        outline: none;
+      }
+      /* .left::after {
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-left: 1px solid;
+        border-top: 1px solid;
+      } */
+      button {
+        position: absolute;
+        width: 70px;
+        height: 34px;
+        border-radius: 17px;
+        background-color: #ffa500;
+        border: none;
+        right: 4px;
+        top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="container">
+        <div class="logo">
+          <a href="javascript:;">
+            <img src="https://gw.alicdn.com/imgextra/i3/O1CN01uRz3de23mzWofmPYX_!!6000000007299-2-tps-143-59.png" alt="" />
+          </a>
+        </div>
+        <form action="">
+          <div class="search">
+            <div class="left">
+              <select name="" id="">
+                <option value="">宝贝</option>
+                <option value="">宝贝</option>
+              </select>
+            </div>
+            <input type="text" placeholder="请搜索" />
+            <button>搜索</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

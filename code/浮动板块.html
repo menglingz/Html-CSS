@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        width: 990px;
+        height: 50px;
+        margin: 0 auto;
+        background-color: aqua;
+      }
+      main {
+        width: 100%;
+      }
+      .w {
+        width: 990px;
+        background-color: red;
+        margin: 0 auto;
+      }
+      .w ul li {
+        float: left;
+        width: 330px;
+        height: 200px;
+        list-style: none;
+      }
+      .w ul::after {
+        content: '';
+        display: block;
+        visibility: hidden;
+        height: 0;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <main>
+      <div class="w">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

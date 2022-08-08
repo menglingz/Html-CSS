@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        body{
+            background-image: url(./img/222.jpeg);
+            background-size: cover;
+        }
+        .box{
+            height: 200px;
+            width: 90%;
+            margin: 0 auto;
+            padding:30px 0;
+            /* 将此元素变成一个弹性容器 */
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+        .box div{
+            width: 150px;
+            height: 160px;
+            background-color: white;
+            text-align: center;
+            /* 改变元素类型： inline-block行内块元素，既不会独占一行，还能设置宽高*/
+            display: inline-block;
+            margin: 0 10px;
+            padding: 5px;
+            transition: all 1s linear;
+        }
+        .box div img{
+            width: 140px;height: 140px;
+        }
+        /* 伪目标选择器 */
+        .box div:nth-child(1):hover{
+            transform: rotate(1300deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div><img src="./img/11.gif" alt=""></div>
+        <div><img src="./img/22.gif" alt=""></div>
+        <div><img src="./img/33.gif" alt=""></div>
+        <div><img src="./img/44.gif" alt=""></div>
+        <div><img src="./img/55.gif" alt=""></div>
+        <div><img src="./img/66.gif" alt=""></div>
+    </div>
+</body>
+</html>

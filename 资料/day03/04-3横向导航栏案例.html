@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            width: 100%;
+            height: 40px;
+            background-color: #ccc;
+        }
+        ul{
+            height: 40px;
+            width: 600px;
+
+        }
+        ul li{
+            float: left;
+            /* 浮动     左浮动 */
+            /* 块级元素变成行内元素 */
+            width: 100px;
+            list-style: none;
+            /* 取消列表序号 */
+            height: 40px;
+            line-height: 40px;
+            /* 是文本内容垂直居中的方式：设置行高与容器高度一致 */
+            /* border: black 1px solid; */
+            border-right: black 1px solid;
+            text-align: center;
+            /* 使边框包含在宽高里 */
+            box-sizing: border-box;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>登录</li>
+            <li>我的订单</li>
+            <li>我的京东</li>
+            <li>京东会员</li>
+            <li>企业采购</li>
+            <li>客户服务</li>
+        </ul>
+    </div>
+</body>
+</html>

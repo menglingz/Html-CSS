@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        transition: all 10s;
+        background-color: #e8e8e8;
+        overflow: hidden;
+      }
+      body:hover {
+        background-color: #4f4f4f;
+      }
+      body:hover .box {
+        background: #e7f1aa;
+        box-shadow: 25px 25px 30px #5c6044, 0 0 3em white;
+        transform: rotate(180deg);
+      }
+      .box {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ff4500;
+        box-shadow: 0 0 100px yellow;
+        /* border-left: 10px solid yellow; */
+        transform-origin: 690px;
+        position: absolute;
+        left: 80px;
+        bottom: 0;
+        transition: all 10s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

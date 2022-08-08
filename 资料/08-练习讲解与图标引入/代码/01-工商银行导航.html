@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .header {
+            height: 60px;
+            background-color: #ccc;
+        }
+
+        .binbin {
+            height: 60px;
+            background-color: red;
+        }
+
+        .nav {
+            height: 45px;
+            background-color: rgb(203, 39, 39);
+            position: sticky;
+            top: 0;
+        }
+
+        .nav .contain ul{
+            
+            height: 100%;
+            /* ul是块级元素，在未设置宽度的情况下
+                会占满父容器的宽度，
+            */
+            width: 700px;
+            margin: 0 auto;
+            line-height: 45px;
+        }
+        .nav .contain ul span{
+            /* 左浮动 */
+            float: left;
+        }
+        .nav .contain ul li{
+            float: left;
+            width: 95px;
+            color: white;
+            /* 去除列表序号 */
+            list-style: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="binbin"></div>
+    <div class="nav">
+        <div class="contain">
+            <ul>
+                <span>|</span>
+                <li>账户服务</li>
+                <span>|</span>
+                <li>存款与贷款</li>
+                <span>|</span>
+                <li>信用卡</li>
+                <span>|</span>
+                <li>外汇业务</li>
+                <span>|</span>
+                <li>投资理财</li>
+                <span>|</span>
+                <li>私人银行</li>
+                <span>|</span>
+                <li>金融市场</li>
+                <span>|</span>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

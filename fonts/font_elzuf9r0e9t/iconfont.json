@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3521809",
+      "name": "新闻",
+      "font_class": "xinwen",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5387729",
+      "name": "新闻",
+      "font_class": "xinwen1",
+      "unicode": "eb42",
+      "unicode_decimal": 60226
+    },
+    {
+      "icon_id": "9871492",
+      "name": "新闻",
+      "font_class": "xinwen2",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "10187050",
+      "name": "新闻",
+      "font_class": "xinwen3",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "25537623",
+      "name": "新闻",
+      "font_class": "xinwen4",
+      "unicode": "e7db",
+      "unicode_decimal": 59355
+    }
+  ]
+}

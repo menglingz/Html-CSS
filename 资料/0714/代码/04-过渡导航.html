@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        .wrap{
+            width: 500px;
+            height: 65px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 40px;
+            background-color: orange;
+            color: white;
+            /* padding-bottom: 30px; */
+        }
+        ul li:nth-child(2){
+            background-color: rgb(226, 147, 0);
+        }
+        ul li:nth-child(3){
+            background-color: rgb(193, 126, 1);
+        }
+        ul li:nth-child(4){
+            background-color: rgb(159, 103, 0);
+        }
+        ul li:nth-child(5){
+            background-color: rgb(145, 95, 1);
+        }
+        ul li div{
+            line-height: 25px;
+            font-size: 12px;
+            background-color: rgba(0, 0, 0, 0.146);
+            /* opacity: ; */
+            transition: all 1s;
+            transform: translateY(25px);
+        }
+        ul:hover li div{
+            transform: translateY(0px);
+        }
+        ul li:nth-child(2) div{
+            transition-delay: .1s;
+        }
+        ul li:nth-child(3) div{
+            transition-delay: .2s;
+        }
+        ul li:nth-child(4) div{
+            transition-delay: .3s;
+        }
+        ul li:nth-child(5) div{
+            transition-delay: .4s;
+        }
+
+    </style>
+</head>
+
+    <body>
+        <div class="wrap">
+            <ul>
+                <li>首页
+                    <div>Home</div>
+                </li>
+                <li>首页
+                    <div>Home</div>
+                </li>
+                <li>首页
+                    <div>Home</div>
+                </li>
+                <li>首页
+                    <div>Home</div>
+                </li>
+                <li>首页
+                    <div>Home</div>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

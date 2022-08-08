@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../资料/font_elzuf9r0e9t/iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .box {
+        width: 300px;
+        height: 450px;
+        margin: 50px auto;
+        border: 1px solid black;
+      }
+      .header {
+        width: 100%;
+        height: 50px;
+        background-color: green;
+        text-align: left;
+        line-height: 50px;
+        font-size: 20px;
+        color: white;
+        font-weight: 600;
+      }
+      img {
+        width: 280px;
+        height: 180px;
+      }
+      .banner {
+        width: 280px;
+        height: 200px;
+        margin: 10px;
+        position: relative;
+      }
+      .lunbo {
+        overflow: hidden;
+        width: 280px;
+        height: 180px;
+      }
+      .banner ul {
+        position: absolute;
+        bottom: 0;
+        left: 130px;
+        z-index: 999;
+      }
+      .banner ul li {
+        background-color: grey;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 5px;
+      }
+      .banner ul li a {
+        display: block;
+        width: 10px;
+        height: 10px;
+      }
+      .banner .lunbo img:target {
+        top: 0;
+        position: absolute;
+        left: 0;
+      }
+      .banner .lunbo::after {
+        content: '台媒：中美军舰';
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background-color: rgba(30, 30, 30, 0.5);
+        display: block;
+        position: absolute;
+        top: 150px;
+        color: white;
+        text-align: center;
+      }
+      .main {
+        width: 100%;
+        height: 150px;
+      }
+      .main h2 {
+        font-size: 19px;
+        text-align: center;
+        color: slategrey;
+        height: 20px;
+        line-height: 20px;
+      }
+      .main ul {
+        margin: 5px auto;
+        width: 100%;
+        height: 130px;
+      }
+      .main ul li {
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        font-size: 18px;
+        margin-left: 5px;
+      }
+      .main ul li::before {
+        content: '\e65a';
+        font-family: 'iconfont';
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="header">WIFI快报</div>
+      <div class="banner">
+        <div class="lunbo">
+          <img src="../资料/07-练习/img/mi8100.jpg" alt="" id="pic1" />
+          <img src="../资料/07-练习/img/mi9000.jpg" alt="" id="pic2" />
+        </div>
+        <ul>
+          <li><a href="#pic1">&lt;</a></li>
+          <li><a href="#pic2">&gt;</a></li>
+        </ul>
+      </div>
+      <div class="main">
+        <h2>港澳台：香港问题没有退让的余地</h2>
+        <ul>
+          <li><a href="javascript:;">港澳台:香港问题没有退让的余地</a></li>
+          <li><a href="javascript:;">港澳台:香港问题没有退让的余地</a></li>
+          <li><a href="javascript:;">港澳台:香港问题没有退让的余地</a></li>
+          <li><a href="javascript:;">港澳台:香港问题没有退让的余地</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var lis = document.querySelectorAll('.banner ul li ')
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].onclick = function () {
+          for (var j = 0; j < lis.length; j++) {
+            lis[j].style.backgroundColor = 'grey'
+          }
+          this.style.backgroundColor = 'orange'
+        }
+      }
+    </script>
+  </body>
+</html>

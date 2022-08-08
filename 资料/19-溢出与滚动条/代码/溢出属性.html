@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;height: 200px;
+            background-color: aqua;
+            /* overflow: visible;默认显示溢出 */
+            float: left;
+            margin-right: 10px;
+        }
+        .box1{
+            overflow: hidden;
+            /* 溢出隐藏 */
+        }
+        .box2{
+            overflow: auto;
+            /* 自动，超出时出现滚动条，等价于下面两个取值 */
+            overflow-x: auto;
+            overflow-y: auto;
+        }
+        /* .box2::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        } */
+        .box3{
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .box3::-webkit-scrollbar{
+            width: 0;
+        }
+        .box4{
+            overflow: scroll;
+            /* 一定出现滚动条 */
+        }
+        .box5{
+            overflow: inherit;
+            /* 继承父元素溢出属性取值 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ea! Ad culpa cumque, tempora non at asperiores labore. Deleniti modi officiis quas suscipit ex expedita consectetur id qui nihil accusantium!
+        <img src="./封面.jpg" alt="">
+    </div>
+    <div class="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ea! Ad culpa cumque, tempora non at asperiores labore. Deleniti modi officiis quas suscipit ex expedita consectetur id qui nihil accusantium!
+        <img src="./封面.jpg" alt="">
+    </div>
+    <div class="box3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ea! Ad culpa cumque, tempora non at asperiores labore. Deleniti modi officiis quas suscipit ex expedita consectetur id qui nihil accusantium!
+        <img src="./封面.jpg" alt="">
+    </div>
+    <div class="box4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ea! Ad culpa cumque, tempora non at asperiores labore. Deleniti modi officiis quas suscipit ex expedita consectetur id qui nihil accusantium!
+        <!-- <img src="./封面.jpg" alt=""> -->
+    </div>
+    <div class="box5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ea! Ad culpa cumque, tempora non at asperiores labore. Deleniti modi officiis quas suscipit ex expedita consectetur id qui nihil accusantium!
+        <img src="./封面.jpg" alt="">
+    </div>
+
+</body>
+</html>

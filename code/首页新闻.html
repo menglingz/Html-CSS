@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      nav {
+        width: 1000px;
+        height: 100px;
+        margin: 100px auto;
+      }
+      ul {
+        width: 100%;
+        height: 100%;
+      }
+      ul li {
+        float: left;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      div {
+        width: 200px;
+        height: 30px;
+        background-color: rgba(255, 166, 0, 0.2);
+        position: absolute;
+        bottom: -30px;
+        line-height: 30px;
+        color: #fff;
+        text-align: center;
+        /* transform: translateY(30px); */
+      }
+      ul:hover div {
+        transform: translateY(-30px);
+      }
+      ul li:nth-child(1) {
+        background-color: rgb(231, 224, 19);
+      }
+      ul li:nth-child(2) {
+        background-color: rgb(226, 210, 29);
+      }
+      ul li:nth-child(3) {
+        background-color: rgb(211, 205, 9);
+      }
+      ul li:nth-child(4) {
+        background-color: rgb(190, 184, 14);
+      }
+      ul li:nth-child(5) {
+        background-color: rgb(135, 131, 11);
+      }
+      ul li:nth-child(1) div {
+        transition: all 0.2s linear 0.1s;
+      }
+      ul li:nth-child(2) div {
+        transition: all 0.2s linear 0.2s;
+      }
+      ul li:nth-child(3) div {
+        transition: all 0.2s linear 0.3s;
+      }
+      ul li:nth-child(4) div {
+        transition: all 0.2s linear 0.4s;
+      }
+      ul li:nth-child(5) div {
+        transition: all 0.2s linear 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          首页
+          <div>Home</div>
+        </li>
+        <li>
+          新闻
+          <div>News</div>
+        </li>
+        <li>
+          产品
+          <div>Product</div>
+        </li>
+        <li>
+          关于
+          <div>About</div>
+        </li>
+        <li>
+          联系
+          <div>Contact</div>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

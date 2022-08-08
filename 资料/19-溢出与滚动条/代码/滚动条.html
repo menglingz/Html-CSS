@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            width: 200px;
+            height: 250px;
+            background-color: antiquewhite;
+            overflow-y: auto;
+
+        }
+        div::-webkit-scrollbar{
+            /* 设置滚动条整体部分，宽高，背景颜色，边框 */
+            background-color: rgb(219, 190, 190);
+            width: 10px; 
+            /* border: 1px red solid; */
+            border-radius: 5px;
+        }
+        div::-webkit-scrollbar-button{
+            /* 设置两端按钮的样式 */
+            /* color: aqua; */
+            display: none;
+        }
+        ::-webkit-scrollbar-track{
+            /* 设置外层轨道样式 */
+            box-shadow:  3px 3px 4px red;
+            /* background-color: yellowgreen; */
+        }
+        div::-webkit-scrollbar-thumb{
+            /* 设置滑块的样式 */
+            width: 10px;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+        div::-webkit-scrollbar-corner{
+            /* 设置两个滚动条之间的交汇处的样式 */
+            background-color: aqua;
+        }
+        div::-webkit-scrollbar-track-piece{
+            /* 设置内层轨道样式，会覆盖外层轨道 */
+            box-shadow: inset 3px 3px 4px blue;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci debitis porro doloribus sint vitae consequuntur culpa reprehenderit officiis voluptatum consectetur, perferendis laborum atque harum suscipit eos. Nisi ab repudiandae possimus?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo vero natus voluptatibus quaerat possimus, molestias, neque voluptatum enim rem dicta quod nisi voluptatem, at molestiae mollitia. Odio quis quidem ullam.
+        <img src="./封面.jpg" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;height: 200px;
+            background-color: red;
+            /* 过渡属性：transition */
+            /* 变化属性选择 过渡时长 过程中的运动变化曲线 过渡延迟开始的时间（可以取负数值） */
+            transition: all 4s linear -2s;
+        }
+        div:hover{
+            background-color: yellow;
+            width: 400px;
+            /* 写在伪类选择器中的过渡，只在开端有效果，结束时没有过渡效果 */
+            /* transition: all 4s linear 0s; */
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

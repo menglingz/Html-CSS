@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        ul li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .header{
+            height: 100px;
+            position: relative;
+        }
+        .contain{
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .header .left{
+            width: 60px;
+            height: 100%;
+            float: left;
+            line-height: 100px;
+        }
+        .header .left img{
+            width: 60px;
+            vertical-align: middle;
+        }
+        .header .center{
+            width: 850px;
+            height: 100%;
+            float: left;
+        }
+        .header .center ul{
+            height: 100%;
+            padding-left: 140px;
+        }
+        .header .center li{
+            line-height: 100px;
+            float: left;
+        }
+        .header .center li a{
+            /* 使a标签变成块级元素，来设置宽高 */
+            display: block;
+            height: 100%;
+            padding: 0 15px;
+        }
+        .header .center li:hover .show_hide{
+            display: block;
+        }
+        .header .show_hide{
+            display: none;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            background-color: skyblue;
+            z-index: 2;
+        }
+        .header .show_hide dl{
+            float: left;
+            width: 200px;
+            height: 250px;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .header .show_hide dt{
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            border-right: 1px solid gray;
+        }
+        .header .show_hide dt img{
+            vertical-align: middle;
+        }
+        .header .show_hide .one{
+            line-height: 30px;
+            padding-top: 10px;
+        }
+        .header .show_hide .two{
+            line-height: 30px;
+            font-size: 20px;
+            color: orangered;
+        }
+        .header .right{
+            height: 100%;
+            width: 280px;
+            line-height: 100px;
+            float: right;
+        }
+        .header .right input{
+            /* 非文本内容在垂直方向上居中 */
+            vertical-align: middle;
+            width: 270px;
+            height: 30px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="contain">
+            <div class="left">
+                <img src="../img/logo-mi2.png" alt="">
+            </div>
+            <div class="center">
+                <ul>
+                    <li><a href="">xiaomi手机</a>
+                        <div class="show_hide">
+                            <div class="contain">
+                                <dl>
+                                    <dt>
+                                        <img src="../img/pic1.webp" alt="">
+                                    </dt>
+                                    <dd>
+                                        <p class="one">小米12pro</p>
+                                        <p class="two">4999元起</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <img src="../img/pic1.webp" alt="">
+                                    </dt>
+                                    <dd>
+                                        <p class="one">小米12pro</p>
+                                        <p class="two">4999元起</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <img src="../img/pic1.webp" alt="">
+                                    </dt>
+                                    <dd>
+                                        <p class="one">小米12pro</p>
+                                        <p class="two">4999元起</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <img src="../img/pic1.webp" alt="">
+                                    </dt>
+                                    <dd>
+                                        <p class="one">小米12pro</p>
+                                        <p class="two">4999元起</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <img src="../img/pic1.webp" alt="">
+                                    </dt>
+                                    <dd>
+                                        <p class="one">小米12pro</p>
+                                        <p class="two">4999元起</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <img src="../img/pic1.webp" alt="">
+                                    </dt>
+                                    <dd>
+                                        <p class="one">小米12pro</p>
+                                        <p class="two">4999元起</p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">小米手机</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                    <li><a href="">小米</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

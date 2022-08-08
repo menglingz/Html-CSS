@@ -1,0 +1,41 @@
+*{
+    padding: 0;margin: 0;
+}
+html,body{
+    height: 100%;width: 100%;
+}
+header,footer{
+    height: 30px;
+    background-color: yellowgreen;
+}
+.main{
+    height: calc(100% - 60px);
+    
+}
+.box{
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-color: tan;
+    box-sizing: border-box;
+    padding: 0 300px;
+}
+.center{
+    /* width: 500px; */
+    height: 100%;
+    background-color: tomato;
+}
+.left{
+    height: 100%;
+    width: 300px;
+    background-color: violet;
+    float: left;
+    margin-left: -100%;
+}
+.right{
+    height: 100%;
+    width: 300px;
+    background-color: steelblue;
+    float: left;
+    margin-left: -300px;
+}

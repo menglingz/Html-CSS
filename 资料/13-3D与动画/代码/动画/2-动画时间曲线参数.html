@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes changeColor {
+        /* 0%---from */
+        /* 100%---to */
+        0%,
+        100% {
+          background-color: red;
+        }
+        20% {
+          background-color: green;
+        }
+        60% {
+          background-color: blue;
+        }
+      }
+
+      .aa {
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        vertical-align: center;
+        margin-bottom: 5px;
+      }
+
+      .div1 {
+        animation: changeColor 10s infinite linear;
+      }
+      .div2 {
+        animation: changeColor 10s infinite step-start;
+      }
+      .div3 {
+        animation: changeColor 10s infinite step-end;
+      }
+      .div4 {
+        animation: changeColor 10s infinite steps(3, start);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <div class="aa">linear:</div>
+        <div class="aa div1"></div>
+      </div>
+      <div>
+        <div class="aa">step-start:</div>
+        <div class="aa div2"></div>
+      </div>
+      <div>
+        <div class="aa">step-end:</div>
+        <div class="aa div3"></div>
+      </div>
+      <div>
+        <div class="aa">steps(3,start):</div>
+        <div class="aa div4"></div>
+      </div>
+    </div>
+  </body>
+</html>

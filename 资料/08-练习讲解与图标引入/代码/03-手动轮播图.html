@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        .wrap{
+            width: 700px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid black;
+            position: relative;
+            /* 关键：要溢出隐藏 */
+            overflow: hidden;
+        }
+        img{
+            width: 700px;
+            height: 300px;
+        }
+        ul{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 999;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            width: 30px;height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin: 0px 5px;
+            border: 1px solid #777;
+        }
+        ul li a{
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+        /* 关键代码 */
+        .wrap #pic1:target{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .wrap #pic2:target{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .wrap #pic3:target{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="#pic1">1</a></li>
+            <li><a href="#pic2">2</a></li>
+            <li><a href="#pic3">3</a></li>
+        </ul>
+        <img src="../img/miWatch.jpg" alt="" id="pic1">
+        <img src="../img/mi8100.jpg" alt="" id="pic2">
+        <img src="../img/mi9000.jpg" alt="" id="pic3">
+    </div>
+</body>
+</html>

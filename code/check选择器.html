@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+      }
+      div.focus,
+      input {
+        position: fixed;
+        float: left;
+        bottom: 0px;
+      }
+      .box div.focus {
+        z-index: 888;
+        width: 20%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        background-color: #e23a6e;
+        text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
+      }
+      input:nth-child(1),
+      div:nth-child(2) {
+        left: 0;
+      }
+      input:nth-child(3),
+      div:nth-child(4) {
+        left: 20%;
+      }
+      input:nth-child(5),
+      div:nth-child(6) {
+        left: 40%;
+      }
+      input:nth-child(7),
+      div:nth-child(8) {
+        left: 60%;
+      }
+      input:nth-child(9),
+      div:nth-child(10) {
+        left: 80%;
+      }
+      input {
+        z-index: 999;
+        width: 20%;
+        height: 50px;
+        opacity: 0;
+      }
+      .box div.focus::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border: 15px solid;
+        border-color: transparent transparent #821134 transparent;
+        position: absolute;
+        top: -30px;
+        left: calc((100% - 30px) / 2);
+        display: none;
+      }
+      input:hover + div.focus {
+        background-color: #ad244f;
+      }
+      input:checked + div.focus {
+        background-color: #821134;
+      }
+      input:checked + div.focus::before {
+        display: block;
+      }
+      .scroll {
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s ease-in;
+      }
+      .scroll section {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      input:nth-child(1):checked ~ div.scroll {
+        transform: translateY(0%);
+      }
+      input:nth-child(3):checked ~ div.scroll {
+        transform: translateY(-100%);
+      }
+      input:nth-child(5):checked ~ div.scroll {
+        transform: translateY(-200%);
+      }
+      input:nth-child(7):checked ~ div.scroll {
+        transform: translateY(-300%);
+      }
+      input:nth-child(9):checked ~ div.scroll {
+        transform: translateY(-400%);
+      }
+      .scroll .icon {
+        width: 200px;
+        height: 200px;
+        background-color: #e23a6e;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        margin-left: -100px;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      [data-icon]::after {
+        content: attr(data-icon);
+        width: 200px;
+        height: 200px;
+        color: #fff;
+        font-size: 90px;
+        text-align: center;
+        line-height: 200px;
+        display: block;
+        transform: rotate(-45deg) translateY(25%);
+      }
+      section h2 {
+        color: #e23a6e;
+        font-size: 54px;
+        line-height: 70px;
+        text-align: center;
+        font-weight: 900;
+        width: 80%;
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        margin-top: -70px;
+        text-shadow: 1px 1px 1px red;
+      }
+      section p {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #821134;
+        width: 50%;
+        position: absolute;
+        top: 52%;
+        left: 25%;
+      }
+      section.cur {
+        background-color: #fa96b5;
+      }
+      section.cur div.icon {
+        background-color: #fff;
+      }
+      section.cur [data-icon]::after {
+        color: #fa96b5;
+      }
+      input:nth-child(1):checked ~ .scroll .scroll1 h2,
+      input:nth-child(3):checked ~ .scroll .scroll2 h2,
+      input:nth-child(5):checked ~ .scroll .scroll3 h2,
+      input:nth-child(7):checked ~ .scroll .scroll4 h2,
+      input:nth-child(9):checked ~ .scroll .scroll5 h2 {
+        animation: moveDown 0.6s linear 0.2s;
+      }
+      input:nth-child(1):checked ~ .scroll .scroll1 p,
+      input:nth-child(3):checked ~ .scroll .scroll2 p,
+      input:nth-child(5):checked ~ .scroll .scroll3 p,
+      input:nth-child(7):checked ~ .scroll .scroll4 p,
+      input:nth-child(9):checked ~ .scroll .scroll5 p {
+        animation: moveUp 0.8s linear 0.2s;
+      }
+      @keyframes moveDown {
+        0% {
+          transform: translateY(-150px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+      @keyframes moveUp {
+        0% {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <input type="radio" name="a" id="" />
+      <div class="focus">Serendipity</div>
+      <input type="radio" name="a" id="" />
+      <div class="focus">Happiness</div>
+      <input type="radio" name="a" id="" />
+      <div class="focus">Tranquility</div>
+      <input type="radio" name="a" id="" />
+      <div class="focus">Positivity</div>
+      <input type="radio" name="a" id="" />
+      <div class="focus">Passion</div>
+      <div class="scroll">
+        <section class="scroll1">
+          <div class="icon" data-icon="H"></div>
+          <h2>Serendipity</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad laudantium odit, veniam provident maiores asperiores odio nulla, aperiam, hic facere sequi est cupiditate consectetur quisquam et tempora placeat mollitia voluptates.</p>
+        </section>
+        <section class="cur scroll2">
+          <div class="icon" data-icon="2"></div>
+          <h2>Happiness</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati necessitatibus qui quos et repudiandae repellendus maxime recusandae adipisci tempora, repellat odio, ex, architecto cupiditate aliquid non numquam enim dolorum totam.</p>
+        </section>
+        <section class="scroll3">
+          <div class="icon" data-icon="B"></div>
+          <h2>Tranquillity</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure numquam veritatis voluptatibus a minima corrupti? Debitis fuga saepe inventore ipsa, officia maxime alias! Debitis, beatae quis magni alias perferendis unde.</p>
+        </section>
+        <section class="cur scroll4">
+          <div class="icon" data-icon="X"></div>
+          <h2>Positivity</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quisquam temporibus, consequatur quam in excepturi possimus perferendis ea praesentium est quis impedit accusamus cupiditate natus eos minus delectus saepe asperiores?</p>
+        </section>
+        <section class="scroll5">
+          <div class="icon" data-icon="C"></div>
+          <h2>Passion</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quisquam dicta, nihil et natus pariatur totam, nobis quos doloremque suscipit incidunt tenetur ipsum, enim saepe illo! Ut quam hic architecto.</p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

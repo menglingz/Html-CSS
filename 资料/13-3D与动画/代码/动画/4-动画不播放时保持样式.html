@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test div{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            animation-name: move;
+            animation-duration: 3s;
+            animation-timing-function: ease-in;
+            animation-delay: 3s;
+            animation-duration: 3s;
+            font-size: 14px;
+            color: black;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 100%;
+        }
+        /* 设定的是动画不播放时元素的样式维持的是动画过程的哪一帧 */
+        .case1{animation-fill-mode:none;}
+        .case2{animation-fill-mode:forwards;}
+        .case3{animation-fill-mode:backwards;}
+        .case4{animation-fill-mode:both;}
+        @keyframes move{
+            0%{
+                background-color: aqua;
+                transform: translateX(0) scale(1);
+            }
+            100%{
+                background-color: chartreuse;
+                transform: translateX(200px) scale(.5);
+
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <!-- none forwards  -->
+    <div class="test">
+        <div class="case1">1</div>
+        <div class="case2">2</div>
+        <div class="case3">3</div>
+        <div class="case4">4</div>
+    </div>
+</body>
+</html>

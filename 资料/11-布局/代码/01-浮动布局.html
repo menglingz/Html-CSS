@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        header{
+            height: 40px;
+            background-color: aliceblue;
+        }
+        header nav{
+            width: 990px;
+            margin: 0 auto;
+            height: 100%;
+            background-color: aquamarine;
+        }
+        main{
+            height: 1000px;
+            
+        }
+        main .w{
+            width: 990px;
+            margin: 0 auto;
+            /* 解决浮动引起的父元素高度塌陷问题 */
+            /* 方法一：给父容器直接设置高度（极不推荐） */
+            /* height: 500px;   */
+        }
+        main .w ul{
+            width: 100%;
+            overflow: hidden;
+            /* 方法四：给父容器添加属性 overflow: hidden;(不推荐)
+                原理：父容器必须要定义宽度，或者设置zoom:1;,同时不能定义高度，使用overflow: hidden;时
+                浏览器会自动检查浮动区域的高度，所以能将浮动的元素也归入范围内
+                优点：代码少，简单，浏览器支持好
+                缺点：不能和定位设置完美适用，因为超出的尺寸会隐藏
+            */
+        }
+        main .w ul li{
+            list-style: none;
+            float: left;
+            width: 330px;
+            background-color: red;
+            height: 250px;
+        }
+        /* main ul div{ */
+            /* 方法二：在浮动的元素后面加上一个空元素，给空元素设置clear属性（不推荐） */
+            /* clear: both;
+            height: 0; */
+        /* } */
+        /* 方法三：给浮动元素的父容器添加上伪元素选择器，设定内容为空，高度为0（推荐） */
+        /* main ul::after{
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <main>
+        <div class="w">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <!-- <div></div> -->
+            </ul>
+            
+        </div>
+    </main>
+
+</body>
+</html>

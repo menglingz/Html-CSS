@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 0 auto;
+            width: 80px;height: 130px;
+            background-color: rgb(69, 69, 202);
+            position: relative;
+            overflow: hidden;
+        }
+        .box .a1{
+            background-color: red;
+            width: 80px;height: 130px;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            transform: rotate(120deg);
+            /* 改变变形中心 */
+            transform-origin: -50px 65px;
+            transition: all 2s ;
+            /* 过渡延迟子属性 */
+            /* transition-delay: 1s; */
+        }
+        .box:hover .a1{
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+    <body>
+        <div class="box">曝光平台
+            <div class="a1">谣言</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid palevioletred;
+            /* 清除表格边框间距的两种方式 */
+            /* border-spacing: 0px 0px; */
+            border-collapse: collapse;
+
+        }
+        td{
+            border: 1px solid palevioletred;
+            /* 点线 */
+            /* border: 1px dotted palevioletred; */
+            /* 虚线 */
+            /* border: 1px dashed palevioletred; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 表格标签 -->
+    <table>
+        <!-- 表格的跨行与跨列 -->
+        <tr>
+            <!-- 表格的横向合并 -->
+            <td colspan="2">111</td><td>333</td>
+        </tr>
+        <tr>
+            <!-- 表格的纵向合并 -->
+            <td rowspan="2">444</td><td>555</td><td>666</td>
+        </tr> 
+        <tr>
+            <td>555</td><td>666</td>
+        </tr>    
+    </table>
+</body>
+</html>
